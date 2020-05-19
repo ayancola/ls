@@ -1,0 +1,20 @@
+<!--pages/page_common/detail_bottom/detail_bottom.wxml-->
+<view class="bottom-tool flex ov-h flex-Y-center" wx:if="{{is_ready==0}}">
+    <block wx:if="{{is_integral==0}}">
+        <view class="total-money f-28 c-70 w-100">合计金额
+            <text class="c-e50e0c">￥{{total_money}}</text>
+        </view>
+    </block>
+
+    <block wx:else>
+        <view class="total-money f-28 c-70 w-100">
+            合计积分
+            <text class="c-e50e0c">{{total_money}}</text>
+        </view>
+    </block>
+
+    <button class="flex0 c-00a67b f-30 btn" bindtap="sercviceCall" hover-class="none">咨询客服</button>
+
+    <navigator wx:if="{{is_confirm_book}}" class="flex0 b-00a67b f-30 btn c-fff" hover-class="none" url="{{order_url}}">预定</navigator>
+    <navigator wx:else class="flex0 b-00a67b f-30 btn c-fff" hover-class="none" bindtap="show_confirm_tips">预定</navigator>
+</view>

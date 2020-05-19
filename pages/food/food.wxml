@@ -1,0 +1,10 @@
+<import src="../../utils/wxParse/wxParse.wxml" />
+<view class="room-detail new_detail pb_LR_40 tool_pd_B">
+    <view class="box b-fff">
+        <view class="title f-34 c-00a67b text-center">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </view>
+        <view class="text f-28 c-70 mt-30">
+        </view>
+    </view>
+</view>

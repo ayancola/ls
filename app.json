@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/page_common/contact/contact",
+    "pages/shop_list/shop_list",
+    "pages/page_common/calendar/calendar",
+    "pages/room_list/room_list",
+    "pages/room_detail/room_detail",
+    "pages/spring_detail/spring_detail",
+    "pages/order/order",
+    "pages/location/location",
+    "pages/location_detail/location_detail",
+    "pages/page_common/detail_bottom/detail_bottom",
+    "pages/my/my",
+    "pages/my_order/my_order",
+    "pages/order_success/order_success",
+    "pages/order_detail/order_detail",
+    "pages/order_sale/order_sale",
+    "pages/shop/shop",
+    "pages/my_coupon/my_coupon",
+    "pages/my_vouchers/my_vouchers",
+    "pages/integral/integral",
+    "pages/news_detail/news_detail",
+    "pages/room_sale_detail/room_sale_detail",
+    "pages/room_integral_detail/room_integral_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "龙山温泉酒店",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a2a2a2",
+    "selectedColor": "#00bb9e",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "images/tab/tab1.png",
+        "selectedIconPath": "images/tab/tab1_on.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/tab/tab2.png",
+        "selectedIconPath": "images/tab/tab2_on.png",
+        "pagePath": "pages/room_list/room_list",
+        "text": "在线商城"
+      },
+      {
+        "iconPath": "images/tab/tab3.png",
+        "selectedIconPath": "images/tab/tab3_on.png",
+        "pagePath": "pages/shop/shop",
+        "text": "促销活动"
+      },
+      {
+        "iconPath": "images/tab/tab4.png",
+        "selectedIconPath": "images/tab/tab4_on.png",
+        "pagePath": "pages/location/location",
+        "text": "酒店导航"
+      },
+      {
+        "iconPath": "images/tab/tab5.png",
+        "selectedIconPath": "images/tab/tab5_on.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

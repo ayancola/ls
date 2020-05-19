@@ -1,0 +1,64 @@
+<!--pages/location/location.wxml-->
+<view class="nav flex f-30 c-2d pb_LR_40 b-fff">
+  <block wx:for="{{nav}}" wx:key="index">
+    <view class="list text-center {{index==active_index?'on':''}}" data-index="{{index}}" bindtap="change">{{item}}</view>
+  </block>
+</view>
+<view class="all-box" wx:if="{{active_index==1}}">
+  <view class="box-list around_location">
+    <block wx:for="{{location_list}}" wx:key="index">
+      <view class="list">
+        <view class="img">
+          <image src="{{item.img}}" mode="{{fill}}"></image>
+        </view>
+        <view class="info flex flex-Y-center">
+          <view class="title bold f-30 c-2d ">{{item.name}}</view>
+          <view class="btn flex0 flex flex-Y-center">
+            <navigator hover-class="none" class="flex flex-Y-center" url="{{item.url}}">
+              <view class="icon">
+                <image src="http://www.fenglu-alu.com/images/lsimg/location_icon1.png" mode="{{fit}}"></image>
+              </view>
+              <text class="f-26 c-00a67b">景点介绍</text>
+            </navigator>
+            <view class="flex flex-Y-center" bindtap="open_map" data-index="{{index}}">
+              <view class="icon">
+                <image src="http://www.fenglu-alu.com/images/lsimg/location_icon2.png" mode="{{fit}}"></image>
+              </view>
+              <text class="f-26 c-00a67b">一键导航</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <include src="/pages/page_common/contact/contact"></include>
+</view>
+<view class="map pos-r" wx:if="{{active_index==0}}">
+  <map id="map" longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}" style="width:100%; height:100%;"  markers="{{markers}}" scale="{{markers[0].scale}}" enable-traffic="true"></map>
+  <cover-view class="pos-a pb_LR_40 cover-map">
+    <cover-view class="box b-fff">
+      <cover-view class="title f-30 c-2d bold flex flex0 flex_dj">
+        <cover-view>导航指南 
+        </cover-view>
+        <cover-view class="c-70 f-26 flex flex_dj flex_Y_center">
+        <cover-image src="http://www.fenglu-alu.com/images/lsimg/tip.png" class="icon2 dis-m" mode="{{w_100}}"></cover-image>
+        <cover-view>坐车指引</cover-view>
+        </cover-view>
+      </cover-view>
+      <cover-view class="info f-26 c-2d mt-20">
+        <cover-view class="list">地　址：广东省云浮市新兴县龙山温泉旅游度假区</cover-view>
+        <cover-view class="list">邮　编：527431</cover-view>
+        <cover-view class="list">电　话：+86 766 2299 888</cover-view>
+        <cover-view class="list">传　真：+86 766 2299 666</cover-view>
+        <cover-view class="list">官　网：www.lswqjd.com</cover-view>
+      </cover-view>
+      <cover-view class="contact pb_LR_40 mt-30">
+      <cover-view hover-class="none" class="text-center a1 block" bindtap="location_map">
+        <cover-view class="box f-0">
+          <cover-image src="http://www.fenglu-alu.com/images/lsimg/location_icon2_1.png" class="icon dis-m" mode="{{w_100}}"></cover-image><cover-view class="f-26 c-fff dis-m">一键导航</cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+    </cover-view>
+  </cover-view>
+</view>

@@ -1,0 +1,13 @@
+/* pages/location_detail/location_detail.wxss */
+.all_box{ padding: 30rpx 40rpx;  box-sizing: border-box;}
+.list{border: 1px solid #00bb9e; background: #fff; border-radius: 10rpx; overflow: hidden;}
+.all_box .img{ height: 345rpx;}
+.info{padding: 30rpx;}
+.contact{background: none; margin-top: 0;}
+.desc{ line-height: 1.6;}
+.map_info{padding: 20rpx;}
+.map_info view+view{ margin-top: 10rpx;}
+.all_box .a1{margin: 0 auto;padding: 0;border-width: 1px;width: 347rpx !important;}
+.all_box .a1 .box{border-radius: 8rpx;padding: 0;
+background: url(http://www.fenglu-alu.com/images/lsimg/subbg.png) no-repeat center #00bb9e; background-size: 100% auto;}
+.all_box .icon{width: 34rpx; height: auto;}

@@ -1,0 +1,14 @@
+<!--pages/order_success/order_success.wxml-->
+<view class="box">
+  <view class="icon m-ot">
+    <image src="http://www.fenglu-alu.com/images/lsimg/submit_icon.png" mode="{{w_100}}"></image>
+  </view>
+  <view class="text text-center c-2d mt-30">
+    <text class="f-38 bold block">预订提交成功</text>
+    <text class="f-26 block mt-20">我们正在处理您的预订。处理完毕后，我们会把“预订确认单”发送给您。请留意服务通知或查看“个人中心”。</text>
+  </view>
+  <view class="btn mt-60">
+    <navigator hover-class="none" url="/pages/room_list/room_list" class="pos-r f-26 c-fff text-center" open-type="switchTab"><view class="btn-bg pos-a w-100 h-100 b-00bb9e"></view>继续预订</navigator>
+    <navigator hover-class="none" url="/pages/my/my" class="pos-r mt-30 f-26 c-00a67b text-center" open-type="switchTab"><view class="btn-bg pos-a w-100 h-100 b-e7ffff"></view>个人中心</navigator>
+  </view>
+</view>

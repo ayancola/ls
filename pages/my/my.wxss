@@ -1,0 +1,11 @@
+/* pages/my/my.wxss */
+.all_box{padding: 30rpx 40rpx;}
+.my_info{background: url(http://www.fenglu-alu.com/images/lsimg/jifen_bg.png) no-repeat left top; background-size: 100% 100%; padding: 50rpx 30rpx;}
+.my_info .tx{ width: 140rpx; height: 140rpx; border-radius: 50%; overflow: hidden; border: 2rpx solid #fff;padding: 2rpx;background: #00bb9e; margin-right: 40rpx;}
+.my_info .tx image{border: 2rpx solid #fff; width: 136rpx; height: 136rpx;border-radius: 50%;}
+.jfen_btn{line-height: 41rpx;height: 41rpx;border-radius: 20rpx; width: 148rpx; margin-left: 33rpx;text-align: center;}
+.all_order,.my_list{ border: 3rpx solid #00bb9e; border-radius: 10rpx; padding: 30rpx;}
+.all_order .icon{ width: 46rpx; height: 46rpx;}
+.my_list image{ width: 8rpx;}
+
+.my_list .list+.list{ margin-top: 20rpx; padding-top: 20rpx; border-top: 1px solid #e4e4e4;}

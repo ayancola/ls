@@ -1,0 +1,54 @@
+<!--pages/my_coupon/my_coupon.wxml-->
+<view class="nav flex f-30 c-2d pb_LR_40 b-fff">
+  <block wx:for="{{nav}}" wx:key="index">
+    <view class="list text-center {{index==active_index?'on':''}}" data-index="{{index}}" bindtap="change">{{item}}</view>
+  </block>
+</view>
+<view class="all-box">
+  <view class="box mt-80" wx:if="{{list.length==0}}">
+    <view class="icon m-ot">
+      <image src="http://www.fenglu-alu.com/images/lsimg/submit_icon.png" mode="{{w_100}}"></image>
+    </view>
+    <view class="text text-center mt-30">
+      <text class="f-30  block c-00a67b">没找到相关优惠券~</text>
+    </view>
+  </view>
+  <view class="coupon-list">
+      <block wx:for="{{list}}" wx:key="index" wx:for-index="index">
+      <view class="list {{item.has_use == true ? 'used' : item.has_date == true ? 'overdue':'b-00bb9e'}}">
+        <view class="info flex w-100 pos-r flex_dj flex-Y-top">
+          <view class="txt">
+            <view class="name f-36 c-2d bold">{{item.type}}</view>
+            <view class="f-24 c-70 mt-20"><text class="block">{{item.desc}}</text><text class="block mt-5">有效期{{item.date}}</text></view>
+          </view>
+          <view class="btn flex0 pos-r flex flex-Y-center">
+            <view class="text-center w-100  c-218a52">
+              <view class="reduce f-20">￥<text class="bold f-48">{{item.reduce}}</text></view>
+              <view class="full f-24">满{{item.full}}可用</view>
+            </view>
+          </view>
+        </view>
+        <view class="bottom flex flex_dj flex-Y-center mt-20">
+          <!-- <image src="http://www.fenglu-alu.com/images/xcx/get.png" mode="{{w_100}}" class="pos-a" wx:if="{{item.has_get==true}}"></image> -->
+          <view class="f-24 c-70 flex flex-Y-center" catchtap="show" data-index="{{index}}"><text>使用细则</text><image src="http://www.fenglu-alu.com/images/xcx/arrow_top.png" mode="{{w_100}}" class="flex0"></image></view>
+          <view class="btn text-center">
+            <view bindtap="{{item.has_use==true?'':'use_coupon'}}" data-index="{{index}}" 
+              class=" get f-26 c-218a52">
+              <view class="btn-bg {{item.has_use==true ? 'c-00a67b': item.has_date==true?'c-00a67b':'c-fff'}}">{{item.has_use==true?'已使用': item.has_date==true?'已过期':'立即使用'}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      </block>
+    </view>
+</view>
+<view class="slide_window w-100 h-100 coupon-window {{window_show==true?'on':''}}">
+  <view class="public-bg c-point" bindtap="show"></view>
+  <view class="box b-fff">
+    <view class="title f-30 bold c-2d">使用细则</view>
+    <view class="info b-f5">
+      <view class="info-text f-28 c-70">{{coupon_txt}}</view>
+    </view>
+  </view>
+</view>
+

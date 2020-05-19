@@ -1,0 +1,23 @@
+<!--pages/integral/integral.wxml-->
+<view class="all-box">
+  <view class="box" wx:if="{{integral_list.length==0}}">
+    <view class="icon m-ot">
+      <image src="http://www.fenglu-alu.com/images/lsimg/submit_icon.png" mode="{{w_100}}"></image>
+    </view>
+    <view class="text text-center mt-30">
+      <text class="f-30 block c-00a67b">暂无积分消费记录</text>
+    </view>
+  </view>
+  <block wx:for="{{integral_list}}" wx:key="index">
+    <view class="list b-fff">
+      <view class="title pos-r flex f-30 c-999">
+        <text class="w-100">{{item.time}}</text>
+        <!-- <text class="flex0">{{item.state==0?'支出':'收入'}}</text> -->
+      </view>
+      <view class="text flex f-26 c-2d mt-20">
+        <text class="w-100">{{item.state==0?"礼品兑换":"消费返还"}}</text>
+        <text class="flex0 {{item.state==0?'c-218a52':'c-e50e0c'}}">{{item.state==0?'-':'+'}}{{item.money}}</text>
+      </view>
+    </view>
+  </block>
+</view>

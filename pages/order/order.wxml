@@ -1,0 +1,284 @@
+<!--pages/order/order.wxml-->
+<view class="order tool_pd_B">
+  <view class="box">
+    <view class="B mt-30 b-fff">
+      <view class="title-box b-00bb9e">
+        <view class="title flex flex-Y-top f-26 c-fff">
+          <text class="w-100">预定：</text>
+          <text class="flex0 tname">{{order_list.origial_name}}</text>
+        </view>
+        <view class="time flex flex-Y-center f-26 c-fff">
+          <text class="w-100">时间：</text>
+          <text class="flex0">{{order_list.time}}</text>
+        </view>
+      </view>
+      <!-- wx:if="{{is_integral==0&&rush_id==0&&product_type=='room'}}"
+      <block></block>-->
+          <view class="list mt-30" wx:if="{{order_list.list.length>0}}">
+              <view class="list-price f-26 text-center c-999">
+                  <view class="flex flex_dj mt-10 c-333 f-28">
+                      <view>日期</view>
+                      <view>单价</view>
+                  </view>
+                  <block wx:for="{{order_list.list}}" wx:key="id" wx:for-index="list_index"
+                         wx:for-item="list_item">
+                      <view class="flex flex_dj mt-10">
+                          <view>{{list_item.date}} {{list_item.week}}</view>
+                          <view>￥{{list_item.price}}</view>
+                      </view>
+                  </block>
+              </view>
+              
+          </view>
+      
+      <!-- <view class="list flex flex-Y-center f-26 c-2d singeP mt-10">
+        <text class="flex0">单价 :</text>
+        <view class="w-100 f-20 text-right" wx:if="{{is_integral==0}}">￥
+          <text class="f-26 c-e50e0c">{{order_list.single_price}}</text>
+          
+        </view>
+        <view class="w-100 c-e50e0c f-20 text-right" wx:else>
+          <text class="f-26">{{order_list.single_price}}</text>
+        </view>
+      </view> -->
+      <view class="list flex_dj  flex-Y-center f-26 c-2d mt-20 lh-52 acount">
+        <text class="flex0">数量 ：</text>
+        <!-- <view class="w-100 text-right">{{order_list.num}}</view> -->
+        <view class="text-right flex flex-Y-right">
+          <view class="reduce b-f2f1f1 pos-r c-point" bindtap="reduce"></view>
+          <view class="num f-24 c-2d b-f2f1f1 text-center">{{order_list.num}}</view>
+          <view class="add b-f2f1f1 pos-r c-point" bindtap="add"></view>
+        </view>
+      </view>
+      <view class="list flex flex-Y-center f-26 c-2d mt-20">
+
+        <text class="flex0">联系人姓名 ：</text>
+        <view class="w-100">
+          <input type="text" confirm-type="next" value="{{order_name}}" bindinput="name" class="name text-right"></input>
+        </view>
+      </view>
+      <view class="list flex flex-Y-center f-26 c-2d mt-10">
+        <text class="flex0">联系电话 ：</text>
+        <view class="w-100 flex flex-Y-center flex-X-right">
+          <input type="number" confirm-type="done" value="{{order_mobile}}" bindinput="tel" class="tel text-right"></input>
+          <button class="f-24 c-00bb9e gettel" hover-class="none" bindgetphonenumber="getPhoneNumber" open-type="getPhoneNumber">一键输入</button>
+        </view>
+      </view>
+      <view class="list mt-30">
+        <view class="flex flex-Y-center f-26 c-2d lh-52">
+          <text class="flex0">发票抬头 ：</text>
+          <view class="w-100 text-right" bindtap="choose_fp">
+            {{order_list.fapiao.title ? order_list.fapiao.title:'点击获取发票抬头'}}
+          </view>
+        </view>
+     
+      </view>
+      <view class="list mt-30 bz">
+        <view class="flex flex-Y-center f-26 c-2d">
+          <text class="flex0">备注 ：</text>
+          <view class="w-100 text-right">
+            <switch checked="{{switch2Checked}}" bindchange="switch2Change" class="wx-switch-input"/>
+          </view>
+        </view>
+        <view wx:if="{{switch2Checked==true}}" class="mt-20">
+          <input type="text" placeholder="输入备注信息" confirm-type="done" value="{{order_list.desc}}" bindinput="desc" class="desc f-24 c-70"></input>
+        </view>
+      </view>
+
+<!--       <view class="list flex flex-Y-center f-26 c-2d singeP"  wx:if="{{is_integral==0&&rush_id==0&&product_type=='room'}}">
+</view> -->
+
+      
+      <view style="display:none;" class="list coupon mt-20"  wx:if="{{is_integral==0&&rush_id>0&&product_type=='room'}}">
+        <view class="flex flex-Y-top f-26 c-2d">
+          <text class="flex0">抢购优惠 ：</text>
+          <view class="w-100  text-right">
+            <text class="block w-100">{{order_list.rush_name}}</text>
+            <text class="f-24 c-666 block w-100">每用户限购{{order_list.rush_limit}}份</text>
+          </view>
+        </view>
+        <view class="f-26 c-e50e0c text-right mt-10" wx:if="{{check_index!=-1}}">-{{check_index==-1?'0':order_list.coupon_list[check_index].reduce_money}}</view>
+      </view>
+       <!-- wx:if="{{order_list.coupon_list.length>0}}" -->
+      <view class="list coupon mt-40" wx:if="{{order_list.vouchers_list.length>0}}">
+        <view class="flex flex-Y-center f-26 c-2d ">
+          <view class="flex  flex-Y-center {{yh_type == 1 && check_index2 !=-1 ?'on':''}}"  bindtap="show2">
+            <view class="sel_icon pos-r flex0"></view><view class="flex0">抵用券：</view>
+          </view>
+          <view class="w-100 flex flex-Y-center flex-X-right" bindtap="show2">
+            <text wx:if="{{!order_list.vouchers_list.length<0}}" >无可用抵用券</text>
+            <text wx:else>{{check_index2==-1?(order_list.vouchers_list.length)+"张抵用券可用":"已使用抵用券"}}</text>
+            <image src="http://www.fenglu-alu.com/images/xcx/down.png" mode="{{w_100}}"></image>
+          </view>
+        </view>
+        <view class="f-26 c-e50e0c text-right mt-10" wx:if="{{check_index2!=-1}}">-{{check_index2==-1?'0':order_list.rush_price}}</view>
+      </view>
+
+      <view class="list coupon mt-45 " wx:if="{{order_list.coupon_list.length>0}}">
+        <view class="flex flex-Y-top f-26 c-2d {{check_index==-1 && check_index !=-1 ? border_b :''}}">
+          <view class="flex  flex-Y-center {{yh_type == 2 ?'on':''}}" bindtap="show">
+            <view class="sel_icon pos-r flex0"></view><view class="flex0">优惠券：</view>
+          </view>
+          <view class="w-100  flex flex-Y-center flex-X-right" bindtap="show">
+              <text wx:if="{{!order_list.vouchers_list.length<0}}" >无可用抵用券</text>
+              <text wx:else>{{check_index==-1?order_list.coupon_list.length+"张优惠券可用":"已使用优惠券"}}</text>
+              <image src="http://www.fenglu-alu.com/images/xcx/down.png" mode="{{w_100}}"></image>
+          </view>
+        </view>
+        <view class="f-26 c-e50e0c text-right mt-10 border_b" wx:if="{{check_index!=-1}}">-{{check_index==-1?'0':order_list.coupon_price}}</view>
+      </view>
+      <view class="list flex f-26 c-2d mt-30" wx:if="{{is_integral==0}}">
+        <text class="flex0">应付金额 :</text>
+        <view class="w-100 c-e50e0c f-20 text-right">
+          <text  style="display: none;">促销价</text>
+          ￥<text class="f-26">{{order_list.total_money}}</text>
+        </view>
+      </view>
+
+      <view class="list flex f-26 c-2d mt-40" wx:else>
+        <text class="flex0">应付金额 :</text>
+        <view class="w-100 c-e50e0c f-20 text-right">
+          <text class="f-26">{{order_list.total_money}}</text>
+        </view>
+      </view>
+      <view class="list pay-box mt-20"  wx:if="{{order_list.pay_show==true}}">
+        <view class="pay flex f-26 c-2d">
+          <text class="w-100">支付方式：</text>
+          <view class="pay-choose">
+            <view class="btn w-50 text-center {{index==0?'on':''}}" data-index="0" bindtap="pay_change">
+              <view class="pos-r dis-t">
+                <view class="icon pos-a">
+                  <image src="http://www.fenglu-alu.com/images/lsimg/weixinzhifu.png" mode="{{w_100}}" class="pos-a"></image>
+                </view>
+                <text class=" f-26 block">在线支付</text>
+              </view>
+            </view>
+            <view class="shop btn w-50 text-center {{index==1?'on':''}}" data-index="1" bindtap="pay_change">
+              <view class="pos-r dis-t">
+                <view class="icon pos-a">
+                  <image src="http://www.fenglu-alu.com/images/lsimg/12.png" mode="{{w_100}}" class="pos-a"></image>
+                </view>
+                <text class=" f-26 block">到店支付</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+      </view>
+      <view class="flex f-24 c-00a67b b-e7ffff tips mt-20">
+        <text class="flex0">声明：</text>
+        <text class="w-100">{{pay_desc}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="bottom-tool flex ov-h  flex-Y-center" wx:if="{{is_integral==0}}">
+  <view class="total-money f-30 c-70 w-100">实付金额 
+    <text class="c-e50e0c">￥{{order_list.pay_money}}</text>
+  </view>
+  <view class="flex0 b-00a67b f-30 btn c-fff" bindtap="pay_order">支付订单</view>
+</view>
+
+
+<view class="bottom-tool flex ov-h  flex-Y-center" wx:else>
+  <view class="total-money f-30 c-70 w-100">合计积分
+    <text class="c-e50e0c">{{order_list.pay_money}}</text>
+  </view>
+  <view class="flex0 b-00a67b f-30 btn c-fff" bindtap="pay_order">支付订单</view>
+</view>
+
+
+
+<view class="slide_window w-100 h-100 coupon-window {{window_show==true?'on':''}}">
+  <view class="public-bg c-point" bindtap="show"></view>
+  <view class="box b-fff">
+    <view class="title f-30 bold c-2d">优惠券</view>
+    <view class="info b-f5">
+      <view class="info-text">
+        <block wx:for="{{order_list.coupon_list}}" wx:key="index">
+          <view class="list flex flex-Y-center b-fff {{item.check==true?'on':''}}" bindtap="choose_coupon" data-index="{{index}}">
+            <view class="money flex0 text-center f-0">
+              <view class="coupon_money dis-t c-00a67b f-50 pos-r">
+                <text class="bold block">{{item.reduce_money}}</text>
+                <text class="f-20 icon pos-a">￥</text>
+              </view>
+              <view class="desc f-20 c-70 mt-10">满{{item.use_money}}可用</view>
+            </view>
+            <view class="time w-100 f-26 c-70">
+              <text class="block">有效期：</text>
+              <text class="block mt-10">{{item.time}}</text>
+            </view>
+            <view class="icon pos-r flex0"></view>
+          </view>
+        </block>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="slide_window  w-100 h-100 coupon-window {{window_show2==true?'on':''}}">
+  <view class="public-bg c-point" bindtap="show2"></view>
+  <view class="box b-fff">
+    <view class="title f-30 bold c-2d">抵用券</view>
+    <view class="info b-f5 vouchers">
+      <view class="info-text coupon-list">
+        <block wx:for="{{order_list.vouchers_list}}" wx:key="index" wx:for-index="index">
+          <view class="list  flex_dj"  bindtap="choose_voucher" data-index="{{index}}">
+            <div class="L flex flex-Y-center text-center f-24 c-fff">
+              <view class="w-100" wx:if="{{item.product_type==0}}"><text class="f-48 bold">{{item.day}}</text>天<text class="block w-100 mt-30">入住时间</text> </view>
+              <view class="w-100" wx:if="{{item.product_type==1}}"><text class="f-48 bold">{{item.day}}</text>件<text class="block w-100 mt-30">抵扣数量</text> </view>
+            </div>
+            <div class="R">
+              <view class="info">
+                <view class="name f-28 c-2d bold">{{item.type}}</view>
+                <view class="f-24 c-70 mt-5"><text class="block">{{item.roomtype}}</text>
+                <text class="block mt-5">有效期{{item.date}}</text></view>
+              </view>
+              <view class="bottom flex flex_dj flex-Y-center mt-20">
+                <view class="f-24 c-70 text-left" catchtap="show" data-index="{{index}}">
+                  <view class="flex flex-Y-center" style="display: none;">使用细则 <image src="http://www.fenglu-alu.com/images/xcx/arrow_top.png" mode="{{w_100}}" class="flex0"></image></view>
+                  <text class="block c-d15858 mt-15">NO.{{item.number}}</text>
+                </view>
+              </view>
+            </div>
+          </view>
+
+          <!-- <view class="list  flex_dj {{item.has_use == true ? 'used' : item.has_date == true ? 'overdue':'b-00bb9e'}}">
+            <div class="L flex flex-Y-center text-center f-24 c-fff">
+              <view class="w-100"><text class="f-48 bold">2</text>天<text class="block w-100 mt-30">入住时间</text> </view> 
+            </div>
+            <div class="R">
+              <view class="info">
+                <view class="name f-28 c-2d bold">欢迎英雄归来，188元特惠抢购</view>
+                <view class="f-24 c-70 mt-5"><text class="block">豪华大床房</text>
+                <text class="block mt-5">有效期：2020-3-1 至 2020-6-1</text></view>
+              </view>
+              <view class="bottom flex flex_dj flex-Y-center mt-20 f-24 c-70 text-left">
+                <text class="block c-d15858">NO.186513185</text>
+              </view>
+            </div>
+          </view> -->
+        </block>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="modal-mask" bindtap="changeModalCancel" wx:if="{{showCon}}">
+  <view class="modal-dialog">
+    <view class="modal-title">温馨提示</view>
+    <view class="modal-content">
+      获取发票失败，请前往设置相关权限
+    </view>
+    <view class="modal-footer flex f-28">
+      <view class="btn-cancel" catchtap="changeModalCancel">取消</view>
+      <button open-type="openSetting" class="btn-confirm button-on-view" style="padding:0rpx;line-height: 86rpx;"
+              catchtap="changeModalCancel">设置
+      </button>
+    </view>
+  </view>
+</view>

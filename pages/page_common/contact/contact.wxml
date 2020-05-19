@@ -1,0 +1,13 @@
+<!--pages/page_common/contact/contact.wxml-->
+<view class="contact pb_LR_40">
+  <view class="img m-ot"><image src="http://www.fenglu-alu.com/images/lsimg/icon33_1.png" mode="{{w_100}}"></image></view>
+  <view class="text c-006349 text-center f-50 tel mt-30 foot_logo"><image src="http://www.fenglu-alu.com/images/lsimg/phone.png" mode="{{w_100}}" class="mt-60"></image></view>
+    <view class="button flex mt-40">
+  <button hover-class="none"  class="text-center a1 flex0 " bindtap="sercviceCall"><view class="box f-0"><text class="f-26 c-fff dis-m">咨询客服</text></view></button>
+  <button hover-class="none"  class="text-center a1 flex0 " open-type="share"><view class="box f-0" ><text class="f-26 c-fff dis-m">分享好友</text></view></button>
+  </view>  
+  <view class="text text-center c-666 f-24 mt-40">
+    <text class="block add mt-15">地址：广东省云浮市新兴县六祖故里旅游度假区</text>
+    <view class="suport mt-15">技术支持：鹏博资讯</view>
+  </view>
+</view>

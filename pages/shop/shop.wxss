@@ -1,0 +1,64 @@
+/* pages/shop/shop.wxss */
+.all_box{ padding: 30rpx 40rpx;}
+.tab_nav{ overflow: hidden;text-align: center;}
+.tab_nav .list{display: inline-block; border-radius: 10rpx;padding: 3rpx;background: #fff; overflow: hidden; border: 4rpx solid #00bb9e;color: #00bb9e; width: 240rpx;margin: 0 10rpx;}
+.tab_nav .btn-bg{height: 44rpx;line-height: 44rpx; background: #fff;border: 1px solid #00bb9e; border-radius: 2px;}
+.tab_nav .list.on{ background: #00bb9e; color: #fff;}
+.tab_nav .list.on .btn-bg{ background: #00bb9e;}
+
+.discount .text-list{border: 1px solid #00bb9e; border-radius: 10rpx; box-sizing: border-box; padding: 16rpx;}
+.discount .text-list+.text-list{margin-top: 35rpx;}
+.discount .img{width: 282rpx; height: 232rpx; box-sizing: border-box;  margin-right: 30rpx;}
+.discount .title{-webkit-line-clamp:2; lighting-color: 1.6;}
+.discount .money{line-height: 1;flex-wrap: wrap;}
+.discount .money .old{ text-decoration: line-through; margin-left: 10rpx;}
+.discount .link{ border-radius: 8rpx; border: 4rpx solid #00bb9e; text-align: center;color: #fff;}
+.discount .link .btn-bg{background: #00bb9e;border: 3rpx solid #fff; width: 98rpx; height: 40rpx; line-height: 40rpx;}
+.discount .link.on .btn-bg{background: #fff; color: #fff;}
+.discount .link.on {border-color: #fff;}
+.discount .money .now{white-space: nowrap;}
+
+.coupon .T{ border: 2rpx solid #00bb9e; border-radius: 10rpx; padding: 0 30rpx;}
+.coupon .title .icon{right: 0; width: 25rpx;}
+.coupon .title{padding: 27rpx 0; border-bottom: 1px solid #e4e4e4;}
+.coupon .title text{border-radius: 50%;margin-left: 30rpx;width: 33rpx;line-height: 33rpx;height: 33rpx;display: inline-block;text-align: center;transform: translateY(-1px);}
+
+.my-coupon{padding: 30rpx 0;overflow:hidden;}
+.my-coupon navigator {background: #00bb9e; width: 30.9%;border: 2rpx solid #00bb9e; border-radius: 7rpx; overflow: hidden;box-sizing: border-box;}
+.my-coupon navigator:nth-of-type(2){margin: 0 3.65%;}
+.my-coupon .info{box-sizing: border-box;background: url(http://www.fenglu-alu.com/images/lsimg/cupbg_09.jpg) bottom no-repeat;background-size: cover;padding: 17rpx 6rpx;}
+/* .my-coupon .info::before{ position: absolute; left: 0; top: 50%; background: #fff; width: 22rpx; height: 22rpx; z-index: 0; transform: translate(-50%,-50%); content: ''; border-radius: 50%;}
+.my-coupon .info::after{ position: absolute; right: 0; top: 50%; background: #00bb9e; width: 22rpx; height: 22rpx; z-index: 0; transform: translate(50%,-50%); content: ''; border-radius: 50%;}
+ */.my-coupon  .use_text{background: #00bb9e; line-height: 52rpx;height: 52rpx; text-align: center;}
+.my-coupon .money{line-height: 1;text-align: center;}
+.my-coupon .text {text-align: center;}
+.my-coupon .text text{text-align: center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display: block;}
+
+.coupon-list .list{border: 6rpx solid #00bb9e; border-radius: 10rpx; box-sizing: border-box; margin-top: 30rpx;
+background: url(http://www.fenglu-alu.com/images/lsimg/cpbg2_23.jpg) center bottom no-repeat;background-size: auto 100%;padding: 30rpx 25rpx;}
+.coupon-list image{ width: 22rpx; margin-left: 15rpx;}
+.coupon-list .txt{width: 400rpx;}
+.coupon-list .btn{width: 160rpx; border-radius: 0 20rpx 20rpx 0; overflow: hidden;}
+.coupon-list .btn image{ margin-left: 0; width: 123rpx; top: 0; right: 0; transform: translate(20%,-20%);}
+.coupon-list .get{text-align: center; border: 4rpx solid #00bb9e; border-radius: 8rpx;padding: 3rpx;width: 126rpx;height: auto;}
+.coupon-list .get .btn-bg{background: #00bb9e;border-radius: 4rpx; width: 100%; height: 37rpx; line-height: 37rpx; }
+.coupon-list .get.on {border-color: #ff945e;}
+.coupon-list .get.on .btn-bg{background-color: #ff945e;}
+.coupon-list .info{ z-index: 2;padding: 0;}
+.coupon-list .bottom{border-top: 1px solid #e4e4e4;padding-top: 12rpx;}
+/* .coupon-list .info:before,.coupon-list  .info::after{content: ''; width: 40rpx; height: 40rpx; border-width: 1px; border-style: solid; position: absolute; right: 0; border-radius: 50%; border-color: #00bb9e #00bb9e transparent transparent; background: #f5f3ee;}
+.coupon-list .info:before{top: 0; transform: translate(50%,-50%) rotate(135deg);}
+.coupon-list .info:after{bottom: 0; transform: translate(50%,50%) rotate(-45deg);}
+ */
+ .integral-shop .T{ background: url(http://www.fenglu-alu.com/images/lsimg/jifen_bg.png) no-repeat left top; background-size: 100% 100%; padding: 34rpx 40rpx;}
+.integral-shop .icon{ width: 54rpx;}
+.integral-shop .btn>navigator{text-align: center;height: 25rpx;line-height: 25rpx;}
+.integral-shop .btn>navigator image{display: inline-block;height: 25rpx; width: 25rpx;margin-left: 12rpx;transform: translateY(4rpx);}
+.integral-shop .btn button{min-height: 52rpx; padding: 0;font-weight: normal; width: 187rpx;height: 52rpx;line-height: 52rpx;background: #fff;border-radius: 26rpx;text-align: center;margin-bottom: 26rpx;}
+.integral-shop .B .list{ border: 1px solid #00bb9e; border-radius: 10rpx; width: 48%; box-sizing: border-box; overflow: hidden; margin-top: 4%;}
+.integral-shop .B .img{ height: 180rpx;}
+.integral-shop .B .list:nth-child(even){ margin-left: 4%;}
+.integral-shop .B  .info{ padding: 20rpx 25rpx;}
+.contact{margin-top: 0;}
+.blank {min-height: 300rpx;}
+.blank .icon{ width: 188rpx;}

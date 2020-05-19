@@ -1,0 +1,109 @@
+/* pages/order/order.wxss */
+.order{padding:  30rpx 40rpx;}
+.order .box .T::before{border: 1px solid #9c653e; border-radius: 20rpx; width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: -1; content: ''; background: #fff;}
+.title-box{padding: 32rpx 30rpx;}
+.title-box .title{margin-bottom: 26rpx;}
+.title-box .tname{width: 480rpx;text-align: right;}
+/* .title-box::before,.title-box::after{content: ''; position: absolute; z-index: -1; width: 26rpx; height: 26rpx; border-radius: 50%; border-width: 1px; border-style: solid;  bottom: 0; background: #f5f3ee; border-color: #9c653e #9c653e transparent transparent;}
+.title-box::before{left: 0; transform: translate(-50%,50%) rotate(45deg);}
+.title-box::after{right: 0;transform: translate(50%,50%) rotate(-135deg);}
+ */
+.pay-choose .btn{border-radius: 5rpx;background: #edfbf9;border: 1px solid #edfbf9;width: 430rpx;height: 55rpx;line-height: 55rpx;color: #2d2d2d;margin-bottom: 7rpx;}
+.pay-choose text{height: 54rpx; line-height: 54rpx;}
+.pay-choose .on{background: #e7ffff; border-color: #00a67b;color: #00a67b;}
+.pay-choose .icon{width: 39rpx; left: 0; top: 50%; transform: translate(-140%,-50%); height: 34rpx;}
+.pay-choose .on .icon{display: block;}
+
+.order .box .B{border: 1px solid #00bb9e; border-radius: 10rpx;padding-bottom: 30rpx;}
+.order .box .B .name{ width: 434rpx; margin-left: auto;border-bottom: 1px solid #00bb9e;}
+.order .box .B .tel{width: 272rpx;border-bottom: 1px solid #00bb9e;height: 54rpx; line-height: 54rpx;}
+.gettel{font-weight: normal; padding: 0; line-height: 52rpx; width: 136rpx !important; height:50rpx !important; min-height: 0 !important; border: 1px solid #00bb9e; margin-left: 25rpx !important; margin-right: 0 !important; color: #00bb9e;}
+.coupon image{width:26rpx; margin-left: 10rpx;}
+.order .box .B .list{padding:  0 30rpx;}
+.tips{padding: 25rpx; line-height: 1.6;width: 555rpx;margin: 70rpx auto 0 auto;}
+.lh-52{line-heigt:52rpx;}
+
+.coupon-window .list{ border: 2px solid #00a67b; padding: 30rpx 35rpx 30rpx 0;}
+.coupon_money text{ line-height: 1;}
+.coupon_money .icon{vertical-align:super; right: -14rpx; top: 0;}
+.coupon-window .money{width: 250rpx; border-right: 1px dashed #707070;}
+.coupon-window .list>.icon{ width: 20rpx; height: 20rpx; border: 1px solid #00a67b;border-radius: 50%; background: #edfbf9; transform: rotate(45deg);}
+.coupon-window .list>.icon::before{content: ''; width: 8rpx; height: 8rpx;  background: #00a67b; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 0; opacity: 0;}
+.coupon-window .list .time,.coupon-window .list>.icon{margin-left: 25rpx;}
+.coupon-window .list.on>.icon::before{opacity: 1;}
+.coupon-window .list+.list{margin-top: 30rpx;}
+.total-money{padding: 0 42rpx;}
+.bottom-tool .total-money{width: 720rpx;}
+.bottom-tool .btn{margin-right: 42rpx;}
+.order .box .B .list.singeP{width: 610rpx; margin: 20rpx auto 0 auto;}
+.fp-btn{font-weight: normal;min-height: 1em;padding: 0;width: 100%;min-height: 1em;}
+.wx-switch-input{
+width:75rpx !important;
+height:36rpx !important;
+}
+.wx-switch-input::before{
+width:34rpx !important;
+height: 34rpx !important;
+}
+.wx-switch-input::after{
+width: 34rpx !important;
+height: 34rpx !important;
+}
+.list-price{line-height:1.6;}
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-dialog {
+    width: 540rpx;
+    overflow: hidden;
+    z-index: 9999;
+    background: #f9f9f9;
+    border-radius: 5rpx;
+}
+.modal-title {
+    padding-top: 30rpx;
+    font-size: 32rpx;
+    color: #030303;
+    text-align: center;
+}
+.modal-content {
+    padding: 20rpx 32rpx;
+    font-size: 28rpx;
+}
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    height: 86rpx;
+    border-top: 1px solid #dedede;
+    font-size: 34rpx;
+    line-height: 86rpx;
+    text-align:center;
+    font-weight: normal;
+}
+.modal-footer button{width: 50% !important;padding:0;text-align:center;font-weight: normal;font-size: 30rpx; }
+.modal-footer view{width: 50%;font-size: 30rpx;}
+
+.vouchers .coupon-list .list{padding: 0; border: 4rpx solid #00bb9e;border-radius: 10rpx;margin-top: 30rpx;background: url(http://www.fenglu-alu.com/images/lsimg/dyqbg.jpg) right top no-repeat;background-size: cover;}
+.vouchers .coupon-list .info{ z-index: 2;padding: 0;}
+.vouchers .coupon-list .bottom{border-top: 1px solid #e4e4e4;padding-top: 12rpx;}
+.vouchers .coupon-list .list .L{width: 145rpx;background-color: #00bb9e;}
+.vouchers .coupon-list .list .R{width: 510rpx;position: relative;position: relative;
+    padding: 26rpx;box-sizing: border-box;}
+.slide_window .vouchers .info-text{height: 580rpx;}
+
+.bz>view{border-bottom: 1px solid #adadad;padding-bottom: 30rpx;}
+
+.sel_icon{width: 20rpx; height: 20rpx;margin-right: 20rpx; border: 1px solid #00a67b;border-radius: 50%; background: #edfbf9; transform: rotate(45deg);}
+.sel_icon::before{content: ''; width: 8rpx; height: 8rpx;  background: #00a67b; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 0; opacity: 0;}
+.on>.sel_icon::before{opacity: 1;}
+.border_b{border-bottom: 1px solid #adadad;padding-bottom: 30rpx;}

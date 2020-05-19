@@ -1,0 +1,23 @@
+<!--pages/location_detail/location_detail.wxml-->
+<view class="all_box">
+  <view class="list b-fff">
+  <view class="img">
+    <image src="{{img}}" mode="{{fill}}"></image>
+  </view>
+  <view class="info">
+    <view class="name bold f-30 c-2d">{{name}}</view>
+    <view class="desc block f-26 c-70 mt-20">{{desc}}</view>
+    <view class="map_info f-26 c-00a67b b-e7ffff mt-30" style="line-height:1.5;">
+      <text class="">{{desc2}}</text>
+    </view>
+    <view class="contact pb_LR_40 mt-30">
+      <view hover-class="none" class="text-center a1 block" bindtap="open_map">
+        <view class="box f-0">
+          <text class="f-26 c-fff dis-m">一键导航</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+</view>
+<include src="/pages/page_common/contact/contact"></include>

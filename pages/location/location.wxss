@@ -1,0 +1,23 @@
+/* pages/location/location.wxss */
+.all-box .box-list .list{ margin: 30rpx auto 0 auto;width: 665rpx;}
+.all-box .box-list .list,.cover-map .box{ border: 2px solid #00bb9e; background: #fff; border-radius: 10rpx; overflow: hidden;}
+.all-box .box-list .list+.list{ margin: 30rpx auto 0 auto;width: 665rpx;}
+.around_location .img{ height: 346rpx;}
+.around_location .icon{ height: 26rpx; width: 30rpx; margin-right: 10rpx;}
+.around_location .btn>view{ margin-left: 30rpx;}
+.around_location .btn{width: 330rpx;}
+.around_location .info{ padding: 25rpx 30rpx;}
+.around_location .title{width: 250rpx;}
+.map{height: calc(100vh - 100rpx);}
+.cover-map{left: 0; width: 100%; bottom: 80rpx; z-index: 2; box-sizing: border-box;}
+.cover-map .box{padding: 0 30rpx 30rpx;}
+.cover-map .title{ padding: 20rpx 0; border-bottom: 1px solid #e4e4e4;}
+.cover-map .info .list+.list{margin-top: 10rpx;} 
+.cover-map .contact{background: none; padding: 0;margin-top: 30rpx;}
+.cover-map .a1{margin: 0 auto;padding: 0;border-width: 1px;width: 347rpx !important;}
+.cover-map .a1 .box{border-radius: 8rpx;padding: 0;
+background: url(http://www.fenglu-alu.com/images/lsimg/subbg.png) no-repeat center #00bb9e; background-size: 100% auto;}
+.cover-map .icon2{width: 27rpx; height: 27rpx;transform: translateY(4rpx);}
+.cover-map .icon{width: 34rpx; height: auto;}
+cover-view.list{line-heigt: 1.5 !important;}
+.cover-map .title .c-70{width: 140rpx;text-align: right;}

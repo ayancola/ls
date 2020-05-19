@@ -1,0 +1,205 @@
+<!--pages/shop/shop.wxml-->
+<view class="nav flex f-30 c-2d pb_LR_40 b-fff">
+    <block wx:for="{{nav}}" wx:key="index">
+        <view class="list text-center {{index==active_index?'on':''}}" data-index="{{index}}" bindtap="change">
+            {{item}}
+        </view>
+    </block>
+</view>
+<view class="all_box">
+
+    <view class="box_list discount " wx:if="{{active_index==0}}">
+        <view class="tab_nav f-26 c-2d f-0">
+            <block wx:for="{{tab_nav}}" wx:key="index">
+                <view class="list text-center w-100  {{index==tab_index?'on':''}}" data-index="{{index}}"
+                      bindtap="tab_change">
+                    <view class="btn-bg">{{item}}</view>
+                </view>
+            </block>
+        </view>
+
+
+
+        <view class="list-box mt-30">
+
+            <block wx:for="{{start}}" wx:key="index" wx:if="{{tab_index==0&&start.length>0}}">
+                <view class="text-list b-fff flex flex-Y-center">
+                    <view class="img flex0" hover-class="none" data-url="{{item.url}}" open-type="navigate"
+                          bindtap="link_detail">
+                        <image src="{{item.img}}" mode="{{fill}}"></image>
+                    </view>
+                    <view class="info w-100">
+                        <view class="title font-over2 f-30 c-2d bold">{{item.title}}</view>
+                        <progress class="c-c17c14 mt-20" percent="{{item.progress}}" show-info="true"
+                                  border-radius="11rpx" font-size="20rpx" stroke-width="22rpx" activeColor="#ff945e"
+                                  backgroundColor="#f0ba9f"/>
+                        <view class="money-box w-100 flex flex-Y-center mt-30">
+                            <view class="money flex f-20 c-70 flex-Y-bottom w-100">
+                                <view class="now c-e50e0c">
+                                    <text>￥</text>
+                                    <text class="f-36 bold">{{item.now_money}}</text>
+                                </view>
+                                <view class="old c-70">￥{{item.old_money}}</view>
+                            </view>
+                            <navigator class="font-over2 f-24 c-fff flex0 link b-ff945e" hover-class="none"
+                                       url="{{item.url}}">
+                                <view class="btn-bg">马上抢</view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </block>
+
+            <view class="blank box mt-30" wx:if="{{tab_index==0&&start.length==0}}">
+                <view class="text text-center mt-80">
+                    <text class="f-30  block c-00a67b">更多优惠活动敬请期待...</text>
+                </view>
+            </view>
+
+
+            <block wx:for="{{ready}}" wx:key="index" wx:if="{{tab_index==1&&ready.length>0}}">
+                <view class="text-list b-fff flex flex-Y-center">
+                    <view class="img flex0" hover-class="none" data-url="{{item.url}}" open-type="navigate"
+                          bindtap="link_detail">
+                        <image src="{{item.img}}" mode="{{fill}}"></image>
+                    </view>
+                    <view class="info w-100">
+                        <view class="title font-over2 f-30 c-2d bold">{{item.title}}</view>
+                        <view class="desc f-24 c-2d mt-15">{{item.desc}}</view>
+                        <view class="money-box w-100 flex flex-Y-center mt-30">
+                            <view class="money flex f-20 c-70 flex-Y-bottom w-100">
+                                <view class="now c-e50e0c">
+                                    <text>￥</text>
+                                    <text class="f-40 bold">{{item.now_money}}</text>
+                                </view>
+                                <view class="old c-70">￥{{item.old_money}}</view>
+                            </view>
+                            <!-- <view class="font-over2 f-26 flex0 link pos-r {{item.set_clock==true?'on':''}}">
+                                <view class="btn-bg">{{item.set_clock==true?'已设置':'提醒我'}}</view>
+                            </view> -->
+                        </view>
+                    </view>
+                </view>
+            </block>
+
+            <view class="blank box mt-30" wx:if="{{tab_index==1&&ready.length==0}}">
+                <view class="text text-center mt-80">
+                    <text class="f-30  block c-00a67b">更多优惠活动敬请期待...</text>
+                </view>
+            </view>
+
+
+        </view>
+    </view>
+    <view class="box_list coupon" wx:if="{{active_index==1}}">
+        <view class="T b-fff">
+            <navigator class="title pos-r f-26 c-2d" hover-class="none" open-type="navigate"
+                       url="/pages/my_coupon/my_coupon">
+                我的优惠券
+                <text class="c-fff b-ff945e f-18 ">{{my_coupon.length}}</text>
+                <view class="icon pos-a Ycenter">
+                    <image src="http://www.fenglu-alu.com/images/lsimg/arrow_right.png" mode="{{w_100}}"></image>
+                </view>
+            </navigator>
+            <view class="my-coupon flex">
+                <block wx:for="{{my_coupon}}" wx:key="index">
+                    <navigator class="list" hover-class="none" open-type="switchTab" url="/pages/room_list/room_list">
+                        <view class="info w-100 pos-r">
+                            <view class="money c-218a52 f-24 bold">￥
+                                <text class="f-48">{{item.reduce}}</text>
+                            </view>
+                            <view class="text f-24 c-218a52 mt-10">
+                                <text class="block w100">{{item.title}}</text>
+                                <text class="block w100">满{{item.full}}减</text>
+                            </view>
+                        </view>
+                        <view class="use_text c-fff f-24 b-00bb9e">立即使用</view>
+                    </navigator>
+                </block>
+            </view>
+        </view>
+        <view class="blank box mt-30" wx:if="{{coupon_list.length==0&&my_coupon.length==0}}">
+            <view class="text text-center mt-80">
+                <text class="f-30  block c-00a67b">暂无优惠券可领取...</text>
+            </view>
+        </view>
+        <view class="B coupon-list" wx:else>
+            <block wx:for="{{coupon_list}}" wx:key="index" wx:for-index="index">
+                <view class="list  b-fff">
+                    <view class="info flex w-100 pos-r flex_dj flex-Y-top">
+                        <view class="txt">
+                            <view class="name f-36 c-2d bold">{{item.title}}</view>
+                            <view class="f-24 c-70 mt-20">
+                                <text class="block">{{item.type}}</text>
+                                <text class="block mt-5">有效期至{{item.date}}</text>
+                            </view>
+                        </view>
+                        <view class="btn flex0 pos-r flex flex-Y-center">
+                            <view class="text-center w-100  c-218a52">
+                                <view class="reduce f-20">￥
+                                    <text class="bold f-48">{{item.reduce}}</text>
+                                </view>
+                                <view class="full f-24">满{{item.full}}可用</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="bottom flex flex_dj flex-Y-center mt-20">
+                        <view class="f-24 c-70 flex flex-Y-center" catchtap="show" data-index="{{index}}">
+                            <text>使用细则</text>
+                            <image src="http://www.fenglu-alu.com/images/xcx/arrow_top.png" mode="{{w_100}}"
+                                   class="flex0"></image>
+                        </view>
+                        <view bindtap="get_coupon" data-id="{{item.id}}" data-state="{{item.has_get}}"
+                              data-index="{{index}}" class="get f-24 {{item.has_get==true?'on':''}}">
+                            <view class="btn-bg c-fff">{{item.has_get==true?'立即使用':'立即领取'}}</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="box_list integral-shop" wx:if="{{active_index==2}}">
+
+        <view class="T flex flex_dj">
+            <view>
+                <view class="f-28 c-fff">我的积分</view>
+                <view class="f-44 c-fff mt-20">{{my_integral}}</view>
+            </view>
+            <view class="btn c-fff f-20">
+                <button open-type="share" class="f-24 c-00a67b">推荐赚积分</button>
+                <navigator url="/pages/integral/integral">积分账单
+                    <image src="http://www.fenglu-alu.com/images/lsimg/gengduo.png" mode="{{fit}}"></image>
+                </navigator>
+            </view>
+        </view>
+        <view class="blank box mt-30" wx:if="{{integral_list.length==0}}">
+            <view class="text text-center mt-80">
+                <text class="f-30  block c-00a67b">积分商城即将上线，敬请期待!</text>
+            </view>
+        </view>
+        <view class="B flex flex-wrap" wx:else>
+            <block wx:for="{{integral_list}}" wx:key="index">
+                <view hover-class="none" data-url="{{item.url}}" class="list b-fff" bindtap="link_detail">
+                    <view class="img">
+                        <image src="{{item.img}}" mode="{{fill}}"></image>
+                    </view>
+                    <view class="info f-26 c-20">
+                        <text class="block">【积分兑换】</text>
+                        <text class="block">{{item.name}}</text>
+                        <view class="c-e50e0c mt-15">{{item.integral}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>
+<include src="/pages/page_common/contact/contact"></include>
+<view class="slide_window w-100 h-100 coupon-window {{window_show==true?'on':''}}">
+    <view class="public-bg c-point" bindtap="show"></view>
+    <view class="box b-fff">
+        <view class="title f-30 bold c-2d">使用细则</view>
+        <view class="info b-f5">
+            <view class="info-text f-28 c-70">{{window_txt}}</view>
+        </view>
+    </view>
+</view>

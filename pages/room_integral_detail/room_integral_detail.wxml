@@ -1,0 +1,97 @@
+<!--pages/room_detail/room_detail.wxml-->
+<import src="../../utils/wxParse/wxParse.wxml"/>
+<view class='banner'>
+    <swiper autoplay='true' indicator-dots='true' indicator-color='rgba(24,167,107,0.5)'
+            indicator-active-color='rgba(24,167,107,1)' duration='800'>
+        <block wx:for="{{room_info.img}}" wx:key="index">
+            <swiper-item>
+                <image src='{{item}}' mode='aspectFill' class='banner-img'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="flex flex0 flex_dj countdown_box">
+    <view class="price">
+        <text class="f-34 c-fff ">{{room_info.show_money}}</text>
+        <text class="del-money c-fff f-24 ">￥{{room_info.int_money}}</text>
+    </view>
+</view>
+
+<view class="room-detail pb_LR_40 tool_pd_B">
+    <view class="box b-fff">
+        <view class="title f-30 c-fff pos-r flex flex0 flex_dj">
+            <view class="txt bold tbg">{{room_info.name}}</view>
+            <button hover-class="none" open-type="share" class="share_btn pos-a Ycenter">
+                <image src="http://www.fenglu-alu.com/images/lsimg/share_btn.png" mode="{{w_100}}"></image>
+            </button>
+        </view>
+        <view class="room_info">
+            <view class="list-box flex flex-wrap">
+                <block wx:for="{{room_info.room_params}}" wx:key="id" wx:for-index="param_index"
+                       wx:for-item="param_item">
+                    <view class="flex flex-Y-center list">
+                        <view class="icon flex0">
+                            <image src="{{param_item.icon}}" mode="{{fit}}"></image>
+                        </view>
+                        <view class="text f-26 c-70 w-100">{{param_item.title}}：{{param_item.content}}</view>
+                    </view>
+                </block>
+
+                <view class="time mt-30" wx:if="{{is_ready!=1}}">
+                    <view bindtap="link_to_calendar" class="link flex_dh flex-Y-bottom" hover-class="none"
+                          data-url="/pages/page_common/calendar/calendar">
+                        <view class="prev-day">
+                            <text class="block f-24 c-70">入住日期</text>
+                            <view class="f-30 c-00a67b view">{{checkInDate}}</view>
+                        </view>
+                        <view class="day f-26 c-00a67b b-e7ffff">共 {{diff_day}} 晚</view>
+                        <view class="next-day text-right">
+                            <text class="block f-24 c-70">退房日期</text>
+                            <view class="f-30 c-00a67b view">{{checkOutDate}}</view>
+                        </view>
+                    </view>
+                    <view class="add_room mt-20">
+                        <view class=" flex flex_Y_Center">
+                            <text class="w-100 f-26 c-2d">预订数量：</text>
+                            <view class="flex0 flex acount f-26">
+                                <picker bindchange="bindRoomNum" value="{{index}}" range="{{room_num}}">
+                                    <text class="picker block on">{{rNum}}</text>
+                                </picker>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+                <block wx:else>
+                    <view class="price f-28 c-2d flex0 flex flex_dj mt-30">
+                        <text>积分兑换：</text>
+                        <view>
+                            <text class="f-38 c-e50e0c">{{total_integral}}</text>
+                        </view>
+                    </view>
+                </block>
+
+            </view>
+        </view>
+
+    </view>
+    <view class="box b-fff mt-20">
+        <view class="room_details">
+
+            <view class="list-box">
+                <view class="title f-30 c-00a67b bold">房间详情</view>
+                <!-- <view class="text f-24 c-70 mt-30">
+                  <text class="bold">便利设施：</text>{{room_shebei.facilitate_text}}</view> -->
+                <view class="text f-24 c-70 mt-30">
+                    <text class="bold block">酒店政策：</text>
+                    <text>{{room_shebei.technology_text}}</text>
+                </view>
+                <view class="text f-24 c-70 mt-30">
+                    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<include src="/pages/page_common/detail_bottom/detail_bottom"></include>

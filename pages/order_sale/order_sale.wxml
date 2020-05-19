@@ -1,0 +1,81 @@
+<!--pages/order/order.wxml-->
+<view class="order tool_pd_B">
+    <view class="box">
+        <view class="B mt-30 b-fff">
+            <view class="title-box b-00bb9e">
+                <view class="title flex flex-Y-top f-26 c-fff">
+                    <text class="w-100">项目：</text>
+                    <text class="flex0 tname">{{room_info.name}}</text>
+                </view>
+                <view class="title flex flex-Y-center f-26 c-fff">
+                    <text wx:if="{{room_info.product_type==0}}" class="w-100">房型：</text>
+                    <text wx:if="{{room_info.product_type==1}}" class="w-100">温泉：</text>
+                    <text class="flex0">{{room_info.origial_name}}</text>
+                </view>
+
+                <view class="title flex flex-Y-center f-26 c-fff" wx:if="{{room_info.product_type==0}}">
+                    <text class="w-100">入住天数：</text>
+                    <text class="flex0">{{room_info.day}}</text>
+                </view>
+                <view class="title flex flex-Y-center f-26 c-fff" wx:if="{{room_info.product_type==1}}">
+                    <text class="w-100">抵扣数量：</text>
+                    <text class="flex0">{{room_info.day}}</text>
+                </view>
+
+                <view class=" flex flex-Y-center f-26 c-fff">
+                    <text class="w-100">有效期：</text>
+                    <view class="flex0">{{room_info.expire_start_time}}至{{room_info.expire_end_time}}</view>
+                </view>
+            </view>
+            <view class="list flex_dj  flex-Y-top f-26 c-2d mt-20 lh-52 acount">
+                <text class="flex0">数量 ：</text>
+                <view class="text-right">
+                    <div class="flex flex-Y-center  flex-X-right">
+                        <view class="reduce b-f2f1f1 pos-r c-point" bindtap="reduce"></view>
+                        <view class="num f-24 c-2d b-f2f1f1 text-center">{{rush_num}}</view>
+                        <view class="add b-f2f1f1 pos-r c-point" bindtap="add"></view>
+                    </div>
+                    <text class="f-24 c-666 block w-100">每用户限购{{room_info.max_rush}}份，你还能购买{{room_info.max_stock}}份</text>
+                </view>
+            </view>
+            <!--<view class="list mt-20">-->
+                <!--<view class="fpiao flex flex-Y-center f-26 c-2d lh-52">-->
+                    <!--<text class="flex0">发票抬头 ：</text>-->
+                    <!--<view class="w-100 text-center" bindtap="choose_fp">-->
+                        <!--{{switch2Checked == true ? order_list.fapiao.title:''}}-->
+                    <!--</view>-->
+                    <!--<view class="text-right">-->
+                        <!--<switch checked="{{switch2Checked}}" bindchange="switch2Change" class="wx-switch-input"/>-->
+                    <!--</view>-->
+                <!--</view>-->
+            <!--</view>-->
+
+            <view class="list flex f-26 c-2d mt-20">
+                <text class="flex0">单价 :</text>
+                <view class="w-100 c-e50e0c f-20 text-right">
+                    ￥
+                    <text class="f-26">{{room_info.show_money}}</text>
+                </view>
+            </view>
+
+            <view class="list flex f-26 c-2d mt-20">
+                <text class="flex0">应付金额 :</text>
+                <view class="w-100 c-e50e0c f-20 text-right">
+                    ￥<text class="f-26">{{total_money}}</text>
+                </view>
+            </view>
+            <view class="f-24 c-00a67b b-e7ffff tips mt-20">
+                <view class="w-100">声明：</view>
+                <text class="w-100">{{room_info.remark}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="bottom-tool flex ov-h  flex-Y-center">
+    <view class="total-money f-30 c-70 w-100">合计金额
+        <text class="c-e50e0c">￥{{total_money}}</text>
+    </view>
+    <view class="flex0 b-00a67b f-30 btn c-fff" bindtap="pay_order">支付订单</view>
+</view>
+

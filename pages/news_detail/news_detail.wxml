@@ -1,0 +1,10 @@
+<!--pages/room_detail/room_detail.wxml-->
+<view class="room-detail new_detail pb_LR_40 tool_pd_B">
+    <view class="box b-fff">
+        <view class="title f-34 c-9c653e text-center">{{info.title}}</view>
+        <view class="time f-28 c-70 mt-20 text-center">发布时间：{{info.addtime}}</view>
+        <view class="text f-28 c-70 mt-30">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </view>
+    </view>
+</view>

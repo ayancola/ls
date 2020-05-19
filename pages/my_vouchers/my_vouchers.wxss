@@ -1,0 +1,25 @@
+/* pages/my_coupon/my_coupon.wxss */
+.all-box{padding: 30rpx 40rpx;}
+.coupon-list .list{border: 4rpx solid #00bb9e;border-radius: 10rpx;margin-top: 30rpx;background: url(http://www.fenglu-alu.com/images/lsimg/dyqbg.jpg) right top no-repeat;background-size: cover;}
+.coupon-list .get{text-align: center; border: 4rpx solid #00bb9e; border-radius: 8rpx;padding: 3rpx;width: 126rpx;height: auto;}
+.coupon-list .get .btn-bg{background: #00bb9e;border-radius: 4rpx; width: 100%; height: 37rpx; line-height: 37rpx; }
+.coupon-list .get.on {border-color: #ff945e;}
+.coupon-list .get.on .btn-bg{background-color: #ff945e;}
+.coupon-list .info{ z-index: 2;padding: 0;}
+.coupon-list .bottom{border-top: 1px solid #e4e4e4;padding-top: 12rpx;}
+
+.coupon-list .overdue{background-image: url(http://www.fenglu-alu.com/images/lsimg/cpbg2_23h.png);border-color: #a3dbd2;}
+.coupon-list .overdue .bottom,.coupon-list .overdue .info .btn{opacity: 1;}
+.coupon-list .overdue .bottom .btn-bg{background: transparent;border: none;opacity: 1;}
+.coupon-list .overdue .btn .get,.coupon-list .used .btn .get{border-color: transparent;}
+.coupon-list .used .bottom .btn-bg{background: transparent;border: none;color: #218a52;}
+.coupon-list .used{position: relative;}
+.coupon-list .used .btn .get{position: relative;background: transparent;border-color: transparent;}
+.coupon-list .used .R:after{content: "";display: block;background: url(http://www.fenglu-alu.com/images/lsimg/used.png) no-repeat;width: 220rpx;height: 163rpx;background-size: 100% auto; position: absolute;top: 50%;left: 46%;
+transform: translate(-50%,-50%);}
+
+.all-box .icon{ width: 188rpx;}
+
+.coupon-list .list .L{width: 145rpx;background-color: #00bb9e;}
+.coupon-list .list .R{width: 510rpx;position: relative;position: relative;
+    padding: 26rpx;box-sizing: border-box;}

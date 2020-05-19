@@ -1,0 +1,96 @@
+<!--pages/order_detail/order_detail.wxml-->
+<view class="all_box">
+  <view class="T b-fff  {{info.status==1?'stabg01':info.status==2?'stabg02':info.status==3?'stabg03':'stabg04'}}">
+    <view class="title pos-r f-30 c-fff bold b-00bb9e">
+      {{info.state}}
+    </view>
+    <view class="info">
+      <view class="list f-26 c-70">
+        <view class="flex"><text class="flex0">订单号：　</text><view class="c-2d">{{info.order_num}}</view></view>
+        <view class="flex"><text class="flex0">下单时间：</text><view class="c-2d">{{info.order_date}}</view></view>
+        <view class="flex"><text class="flex0">支付方式：</text><view class="c-2d">{{info.pay_style}}</view></view>
+
+        <view class="flex"><text class="flex0">预订数量：</text><view class="c-2d" wx:if="{{info.type==1}}">{{info.num}}间</view><view class="c-2d" wx:else>{{info.num}}件</view>
+        </view>
+
+        <view class="flex"><text class="flex0">订单金额：</text><view class="c-e50e0c">{{info.money}}</view></view>
+
+        <view wx:if="{{info.rush_title!=''}}" class="flex"><text class="flex0">抢购优惠：</text><view class="c-e50e0c">{{info.rush_title}}</view></view>
+        <view wx:if="{{info.status==3&&info.rush_title!=''}}" class="flex"><text class="flex0">优惠使用：</text><view class="c-e50e0c">已使用</view></view>
+
+        <view wx:if="{{info.coupon_title!=''}}" class="flex"><text class="flex0">优惠券使用：</text><view class="c-e50e0c">{{info.coupon_title}}</view></view>
+
+        <view wx:if="{{info.status==3&&info.coupon_title!=''}}" class="flex"><text class="flex0">优惠使用：</text><view class="c-e50e0c">已使用</view></view>
+
+        <view wx:if="{{info.status==4}}" class="flex"><text class="flex0">取消原因：</text><view class="c-e50e0c">{{info.error_tips}}</view></view>
+
+      </view>
+      <view class="b-f5ffff date-box mt-20 c-00a67b">
+        <view class="c-563e24 f-30"><text class="block f-26 c-fff c_sale" wx:if="{{ rush_id != 0 &&product_type=='room'}}">促销</text> {{info.room_name}}</view>
+
+        <view class="flex_dj f-30 c-00a67b flex-Y-center mt-10 date" wx:if="{{info.type==1}}">{{info.start_date}}<view class="f-26">共<text class="bold">{{info.night}}</text>晚</view>{{info.end_date}}</view>
+
+        <view wx:else class="flex_dj f-30 c-00a67b flex-Y-center mt-10 date">预定日期：{{info.start_date}}</view>
+
+
+        <block  wx:if="{{info.date_list.length>0}}">
+          <view class="list">
+            <view class="list-price f-26 text-center c-999">
+              <view class="flex flex_dj mt-20 c-333 f-28">
+                <view>日期</view>
+                <view>单价</view>
+              </view>
+              <block  wx:for="{{info.date_list}}" wx:key="id" wx:for-index="list_index" wx:for-item="list_item">
+                <view class="flex flex_dj mt-10">
+                  <view>{{list_item.date}} {{list_item.week}}</view>
+                  <view>￥{{list_item.price}}</view>
+                </view>
+              </block>
+
+            </view>
+          </view>
+        </block>
+
+      </view>
+
+      <view class="btn-box flex mt-30">
+        <!-- <navigator class="btn pos-r flex0 text-center f-26 c-fff b-00bb9e" hover-class="none" url="/pages/room_list/room_list">
+          再次预订
+        </navigator> -->
+        <view  wx:if="{{info.status=='1'&&info.order_type!='1'}}"  bindtap="repay" class="btn pos-r flex0 text-center f-26 c-fff b-00a67b" hover-class="none" url="">
+          重新支付
+        </view>
+        <button class="btn pos-r flex0 text-center f-26 c-00a67b b-e7ffff" hover-class="none" bindtap="sercviceCall">
+          在线咨询
+        </button>
+        <view class="btn pos-r flex0 text-center f-26 c-00a67b b-e7ffff" wx:if="{{info.status=='1'}}" bindtap="cancelOrder">
+          取消订单
+        </view>
+      </view>
+      <view class="tips flex flex-Y-center f-22 c-70">
+        <image src="http://www.fenglu-alu.com/images/xcx/wenhao.png" mode="{{w_100}}"></image>
+        <text>遇到问题？欢迎联系客服</text>
+      </view>
+    </view>
+  </view>
+  <view class="B b-fff mt-20">
+    <view class="title f-30 c-218a52 bold">个人信息</view>
+    <view class="info mt-30">
+      <view class="list f-26 c-70">
+        <view class="flex"><text class="flex0">联系人：　</text><view class="c-2d">{{info.name}}</view></view>
+        <view class="flex"><text class="flex0">联系电话：</text><view class="c-2d">{{info.tel}}</view></view>
+        <view>
+          <view class="flex flex-Y-center" wx:if="{{info.fapiao!=''}}" bindtap="{{info.fapiao==''?'':'show'}}">
+            <text class="flex0">发票抬头：</text>
+            <view class="c-2d">{{info.fapiao==''?'无':'展开'}}</view>
+            <image src="http://www.fenglu-alu.com/images/xcx/arrow_bottom.png" mode="{{w_100}}" wx:if="{{info.fapiao!=''}}"></image>
+          </view>
+          <view class="company f-22 c-70 mt-15" wx:if="{{show==true}}">抬头名称：{{info.fapiao}}</view>
+        </view>
+        <!--<view class="flex"><text class="flex0">使用优惠：</text><view class="c-2d">{{info.yh}}</view></view>-->
+        <view class="flex"><text class="flex0">备注：</text></view>
+        <view class="c-2d note mt-20 w-10" wx-if="{{info.desc}}">{{info.desc}}</view>
+      </view>
+    </view>
+  </view>
+</view> 

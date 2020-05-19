@@ -1,0 +1,14 @@
+/* pages/my_order/my_order.wxss */
+.all_box .box{padding: 140rpx 0;}
+.all_box .icon{ width: 188rpx;}
+.all_box .text{line-height: 1.6;}
+
+.order_list{padding: 30rpx 40rpx;min-height: 45vh;}
+.order_list .list{ padding: 25rpx;}
+.order_list .list+.list{margin-top: 20rpx;}
+.order_list .list::before{content: ''; position: absolute; width: 100%; height: 100%; z-index: -1;
+ background: #fff; border: 1px solid #00bb9e; border-radius: 10rpx; left: 0; top:0%}
+.order_list .data view{ padding: 8rpx 12rpx; border-radius: 4rpx; margin-left: 20rpx;}
+.name text{width: 500rpx;}
+
+.c_sale{border-radius: 6rpx; background: #ffa75a;width: 71rpx;height: 32rpx;line-height: 32rpx;text-align: center;float: left;transform: translateY(5rpx);margin-right: 10rpx;font-weight: normal;width: 2.5em !important;}

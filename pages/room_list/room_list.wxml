@@ -1,0 +1,270 @@
+<import src="../../utils/wxParse/wxParse.wxml" />
+<view class="nav flex f-30 c-2d pb_LR_40 b-fff">
+  <block wx:for="{{nav}}" wx:key="index">
+    <view class="list text-center {{index==active_index?'on':''}}" data-index="{{index}}" bindtap="change">{{item}}</view>
+  </block>
+</view>
+<view class="room_list" wx:if="{{active_index==0}}">
+  <view class="time pb_LR_40 mt-30">
+    <view class="box b-fff">
+      <view bindtap="link_to_calendar" class="link flex_dh flex-Y-bottom" hover-class="none" data-url="/pages/page_common/calendar/calendar">
+        <view class="prev-day">
+          <text class="block f-24 c-70">入住日期</text>
+          <view class="f-30 c-00a67b view">{{checkInDate}}</view>
+        </view>
+        <view class="day f-26 c-00a67b b-e7ffff">共 {{diff_day}} 晚</view>
+        <view class="next-day text-right">
+          <text class="block f-24 c-70">退房日期</text>
+          <view class="f-30 c-00a67b view">{{checkOutDate}}</view>
+        </view>
+      </view>
+      <view class="add_room">
+        <view class=" flex flex_Y_Center">
+          <text class="w-100 f-26 c-2d">预订数量：</text>
+          <view class="flex0 flex acount f-26">
+            
+            <picker bindchange="bindRoomNum" value="{{index}}" range="{{room_num}}">
+              <text class="picker block on">{{rNum}}</text>
+            </picker>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="room-list pb_LR_40 mt-30">
+    <block wx:for="{{room_list}}" wx:key="index">
+      <view class="list b-fff">
+        <view class="img-box">
+          <view class="img">
+            <view bindtap="link" data-url="/pages/room_detail/room_detail?is_common=1&id={{item.id}}">
+              <image src="{{item.img}}" mode="{{fill}}" ></image>
+            </view>
+          </view>
+          <view class="text c-2d">
+            <view class="name flex flex-Y-center flex_dj">
+              <text class="room_name f-30 c-fff w-100 bold">{{item.name}}</text>
+              <view class="room_money pos-r f-24 c-ff945e flex0">
+                <text class="20">￥</text>
+                <text class="f-44">{{item.money}}</text>起
+              </view>
+            </view>
+
+            <view class="desc f-24 c-48 flex flex-wrap mt-20">
+              <block  wx:for="{{item.room_params}}" wx:key="id" wx:for-index="param_index" wx:for-item="param_item">
+                <view class="flex0">{{param_item.title}}：{{param_item.content}}</view>
+              </block>
+
+
+            </view>
+          </view>
+        </view>
+        <view class="other">
+          <block wx:for="{{item.list}}" wx:key="index">
+            <view class="a" bindtap="{{item.allin==true?'':'link'}}" data-url="{{item.url}}">
+              <view class="box flex flex-Y-center">
+                <view class="text w-100">
+                  <view class="block title f-28 c-2d {{item.quick_buy.state? '':''}}">
+                    <block wx:if="{{item.quick_buy.state==true}}">
+                      <text class="block f-26 c-fff c_sale">促销</text>
+                    </block>{{item.title}}
+                  </view>
+                  <!-- <text class="money f-28 c-e50e0c mt-10 block"><text class="20"  wx:if="{{!item.is_integer_good}}">￥</text>{{item.money}}</text> -->
+                </view>
+                <view class="flex0 room-btn">
+                  <view class="room_btn text-center f-24 c-fff {{item.quick_buy.state? 'quick_buy':''}}">
+                    <block wx:if="{{item.quick_buy.state==false}}">
+                      <text class="block">{{item.allin==true?'已满房':'预订'}}</text>
+                    </block>
+                    <block wx:else>
+                      <text class="block {{item.allin==true?'on':''}}">{{item.allin==true?'已抢完':'马上抢'}}</text>
+                    </block>
+                  </view>
+
+                  <block wx:if="{{item.quick_buy.state==true}}">
+                    <view class="block f-22 c-ff945e state mt-10">已抢{{item.quick_buy.progress}}%</view>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="label_list">
+          <view class="flex flex-wrap">
+              <text class="f-20 c-00a67b b-e7ffff" catchtap="choose_fp">预约发票</text>
+              <text class="f-20 c-00a67b b-e7ffff" catchtap="link_to_point">积分累计</text>
+              <text class="f-20 c-00a67b b-e7ffff" catchtap="link_to_coupon">可用券</text>
+
+
+            <!-- <block wx:for="{{item.label_list}}" wx:key="index">
+              <text class="f-20 c-00a67b b-e7ffff">{{item}}</text>
+            </block> -->
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>
+  <view class="room-list pb_LR_40 mt-30" wx:if="{{active_index==2}}">
+
+    <block wx:for="{{spring_list}}" wx:key="index" wx:for-item="spring_item">
+      <view class="list b-fff">
+        <view class="img-box" bindtap="link" data-url="/pages/spring_detail/spring_detail?is_rush=0&id={{spring_item.id}}">
+          <view class="img">
+              <image src="{{spring_item.img}}" mode="{{fill}}" ></image>
+          </view>
+         <!--  <view class="text c-2d">
+           <view class="name flex flex-Y-center flex_dj">
+             <text class="room_name f-30 c-fff w-100 bold">{{spring_item.name}}</text>
+           </view>
+         </view> -->
+        </view>
+        <view class="other">
+          <block wx:for="{{spring_item.list}}" wx:key="index">
+            <view class="a" bindtap="{{item.allin==true?'':'link'}}" data-url="{{item.url}}">
+              <view class="box flex flex-Y-top">
+                <view class="text w-100">
+                  <text class="block title f-26 c-2d">
+                    <block wx:if="{{item.quick_buy.state==true}}">
+                        <text class="block f-24 c-fff c_sale">促销</text>
+                      </block>{{item.title}}</text>
+                   <text class="money f-28 c-e50e0c mt-10 block"><text class="20"  wx:if="{{!item.is_integer_good}}">￥</text>{{item.money}}</text>
+                </view>
+                <view class="flex0 room-btn">
+                  <view class="room_btn text-center f-24 b-fff c-fff">
+                      <text class="block">预订</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+    <view class="spring-con b-fff mt-30">
+      <view class="bg c-333 f-26">
+        <view class="bgs">
+          <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+          <!--<view class="c-00bb9e bold f-28 title">养生温泉</view>-->
+          <!--<text class="c-333 f-26 bold block mt-60 text-center">洗涤凡尘 · 复归自然</text>-->
+          <!--<text class="c-333 f-26 bold text-center">清风徐来，水波不兴，莺啼燕语，纵心自然</text>-->
+          <!--<image src="http://www.fenglu-alu.com/images/lsimg/spimg.jpg" mode="{{w_100}}" class="mt-70"></image>-->
+          <!--<view class="c-000 f-28 mt-60 block title2">激情动感区</view>-->
+          <!--<image src="http://www.fenglu-alu.com/images/lsimg/spimg22.jpg" mode="{{w_100}}" class="mt-30"></image>-->
+          <!--<text class="c-333 f-24 mt-30 block">各种水疗设备带给您无限乐趣，水流有不同力度的按摩效果。有儿童滑道及儿童游乐设施，让您和您的孩子分享天真童趣。</text>-->
+          <!--<view class="c-000 f-28 mt-60 block title2">养生药浴区</view>-->
+          <!--<image src="http://www.fenglu-alu.com/images/lsimg/spimg33.jpg" mode="{{w_100}}" class="mt-30"></image>-->
+          <!--<text class="c-333 f-24 mt-30 block">温泉水中含有各类养生药材。对皮肤血管反复扩张收缩，具有醒神健体之功效，可增强身体抵抗力。</text>-->
+          <!--<view class="c-000 f-28 mt-60 block title2">美容养颜区</view>-->
+          <!--<image src="http://www.fenglu-alu.com/images/lsimg/spimg44.jpg" mode="{{w_100}}" class="mt-20"></image>-->
+          <!--<text class="c-333 f-24 mt-30 block">各种养颜花类与温泉水相融，养阴润肺、清心安神，益身延寿、红润容颜。改善机体的新陈代谢，增强身体免疫力。</text>-->
+          <!--<view class="c-000 f-28 mt-60 block title2">圣地养心区</view>-->
+          <!--<image src="http://www.fenglu-alu.com/images/lsimg/spimg55.jpg" mode="{{w_100}}" class="mt-50"></image>-->
+          <!--<text class="c-333 f-24 mt-30 block">镇静平衡，身心松弛，有助睡眠、舒缓紧张压力。对修复皮肤疤痕有一定疗效。</text>-->
+          <!--<view class="c-000 f-28 mt-60 block title2">特色温泉池</view>-->
+          <!--<image src="http://www.fenglu-alu.com/images/lsimg/spimg66.jpg" mode="{{w_100}}" class="mt-50"></image>-->
+          <!--<text class="c-333 f-24 mt-30 block">小鱼按摩师与您亲密接触，啄食死皮、祛除微菌。海底泥池享受天然养生之乐趣。地热床石板温泉，缓解腰酸背痛的症状。</text>-->
+
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+<view class="room_list" wx:if="{{active_index==1}}">
+  <view class="time pb_LR_40 mt-30">
+    <view class="box b-fff">
+      <view bindtap="link_to_calendar" class="link flex_dh flex-Y-bottom" hover-class="none" data-url="/pages/page_common/calendar/calendar">
+        <view class="prev-day">
+          <text class="block f-24 c-70">入住日期</text>
+          <view class="f-30 c-00a67b view">{{checkInDate}}</view>
+        </view>
+        <view class="day f-26 c-00a67b b-e7ffff">共 {{diff_day}} 晚</view>
+        <view class="next-day text-right">
+          <text class="block f-24 c-70">退房日期</text>
+          <view class="f-30 c-00a67b view">{{checkOutDate}}</view>
+        </view>
+      </view>
+      <view class="add_room">
+        <view class=" flex flex_Y_Center">
+          <text class="w-100 f-26 c-2d">预订数量：</text>
+          <view class="flex0 flex acount f-26">
+            <!-- <view class="reduce b-f2f1f1 pos-r c-point" bindtap="reduce"></view>
+            <view class="num f-24 c-2d b-f2f1f1 text-center">{{num}}</view>
+            <view class="add b-f2f1f1 pos-r c-point" bindtap="add"></view> -->
+            <picker bindchange="bindRoomNum" value="{{index}}" range="{{room_num}}">
+              <text class="picker block on">{{rNum}}</text>
+            </picker>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="room-list pb_LR_40 mt-30">
+    <block wx:for="{{villa_list}}" wx:key="index">
+      <view class="list b-fff">
+        <view class="img-box">
+          <view class="img" bindtap="link" data-url="/pages/room_detail/room_detail?is_rush=0&id={{item.id}}">
+            <image src="{{item.img}}" mode="{{fill}}"></image>
+          </view>
+          <view class="text c-2d">
+            <view class="name flex flex-Y-center flex_dj">
+              <text class="room_name f-30 c-fff w-100 bold">{{item.name}}</text>
+              <view class="room_money pos-r f-24 c-ff945e flex0">
+                <text class="20">￥</text>
+                <text class="f-44">{{item.money}}</text>起
+              </view>
+            </view>
+
+            <view class="desc f-24 c-48 flex flex-wrap mt-20">
+              <block  wx:for="{{item.room_params}}" wx:key="id" wx:for-index="param_index" wx:for-item="param_item">
+                <view class="flex0">{{param_item.title}}：{{param_item.content}}</view>
+              </block>
+
+
+            </view>
+          </view>
+        </view>
+        <view class="other">
+          <block wx:for="{{item.list}}" wx:key="index">
+            <view class="a" bindtap="{{item.allin==true?'':'link'}}" data-url="{{item.url}}">
+              <view class="box flex flex-Y-center">
+                <view class="text w-100">
+                  <view class="block title f-28 c-2d">
+                    <block wx:if="{{item.quick_buy.state==true}}">
+                      <text class="block f-26 c-fff c_sale">促销</text>
+                    </block>{{item.title}}
+                  </view>
+                  <!-- <text class="money f-28 c-e50e0c mt-10 block"><text class="20"  wx:if="{{!item.is_integer_good}}">￥</text>{{item.money}}</text> -->
+                </view>
+                <view class="flex0 room-btn">
+                  <view class="room_btn text-center f-24 c-fff {{item.quick_buy.state? 'quick_buy':''}}">
+                    <block wx:if="{{item.quick_buy.state==false}}">
+                      <text class="block">{{item.allin==true?'已满房':'预订'}}</text>
+                    </block>
+                    <block wx:else>
+                      <text class="block {{item.allin==true?'on':''}}">{{item.allin==true?'已抢完':'马上抢'}}</text>
+                    </block>
+                  </view>
+
+                  <block wx:if="{{item.quick_buy.state==true}}">
+                    <view class="block f-22 c-ff945e state mt-10">已抢{{item.quick_buy.progress}}%</view>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="label_list">
+          <view class="flex flex-wrap">
+             <text class="f-20 c-00a67b b-e7ffff" catchtap="choose_fp">预约发票</text>
+              <text class="f-20 c-00a67b b-e7ffff" catchtap="link_to_point">积分累计</text>
+              <text class="f-20 c-00a67b b-e7ffff" catchtap="link_to_coupon">可用券</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>
+<include src="/pages/page_common/contact/contact"></include>

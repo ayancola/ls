@@ -1,0 +1,305 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.4",
+	"appid": "wx471c39adbb28b9e0",
+	"projectname": "xqy",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "房间详情",
+					"pathName": "pages/room_integral_detail/room_integral_detail",
+					"query": "is_integral=1&id=23",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "房间列表",
+					"pathName": "pages/room_list/room_list",
+					"query": "type=2",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "温泉详情",
+					"pathName": "pages/spring_detail/spring_detail",
+					"query": "is_rush=0&id=4",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "提交订单",
+					"pathName": "pages/order/order",
+					"query": "type=room&is_integral=0&rush_id=0&id=23",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付成功",
+					"pathName": "pages/order_success/order_success",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "促销活动",
+					"pathName": "pages/shop/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "酒店导航",
+					"pathName": "pages/location/location",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "景点详情",
+					"pathName": "pages/location_detail/location_detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员中心",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/my_order/my_order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "订单详情",
+					"pathName": "pages/order_detail/order_detail",
+					"query": "type=1&id=11",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/my_coupon/my_coupon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "积分账单",
+					"pathName": "pages/integral/integral",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/news_detail/news_detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "type=room&is_integral=0&rush_id=0&id=24",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order_detail/order_detail",
+					"pathName": "pages/order_detail/order_detail",
+					"query": "type=1&id=28",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order_detail/order_detail",
+					"pathName": "pages/order_detail/order_detail",
+					"query": "type=1&id=27",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my_order/my_order",
+					"pathName": "pages/my_order/my_order",
+					"query": "type=1&id=27",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my_order/my_order",
+					"pathName": "pages/my_order/my_order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order_detail/order_detail",
+					"pathName": "pages/order_detail/order_detail",
+					"query": "type=1&id=27",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "type=room&rush_id=11&id=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "type=room&is_integral=0&rush_id=12&id=23&rush_num=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order_detail/order_detail",
+					"pathName": "pages/order_detail/order_detail",
+					"query": "type=1&id=6",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order_detail/order_detail",
+					"pathName": "pages/order_detail/order_detail",
+					"query": "type=1&id=8",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/spring_detail/spring_detail",
+					"pathName": "pages/spring_detail/spring_detail",
+					"query": "is_rush=0&id=4",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "type=shop&is_integral=0&rush_id=0&id=4",
+					"scene": null
+				},
+				{
+					"id": 26,
+					"name": "抢购详情",
+					"pathName": "pages/room_sale_detail/room_sale_detail",
+					"query": "id=23&rush_id=15",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "抢购详情",
+					"pathName": "pages/room_sale_detail/room_sale_detail",
+					"query": "id=23&rush_id=12",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "限购详情",
+					"pathName": "pages/order_sale/order_sale",
+					"query": "id=23&rush_id=12",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "限购详情",
+					"pathName": "pages/order_sale/order_sale",
+					"query": "id=23&rush_id=12",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的抵用券",
+					"pathName": "pages/my_vouchers/my_vouchers",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order_sale/order_sale",
+					"pathName": "pages/order_sale/order_sale",
+					"query": "type=room&is_integral=0&rush_id=15&id=23&rush_num=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/room_sale_detail/room_sale_detail",
+					"pathName": "pages/room_sale_detail/room_sale_detail",
+					"query": "id=5&rush_id=16",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "type=room&is_integral=0&rush_id=0&id=23",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "type=room&is_integral=0&rush_id=0&id=26",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,30 @@
+/* pages/room_detail/room_detail.wxss */
+@import "../../utils/wxParse/wxParse.wxss";
+.banner swiper{height: 300rpx;}
+.banner .wx-swiper-dots.wx-swiper-dots-horizontal{bottom: 30rpx;}
+.banner .wx-swiper-dot{ border: 1px solid #fff;width: 14rpx;height: 14rpx; margin: 0 6rpx;}
+.room-detail{padding-top: 35rpx;}
+.room-detail .box{ border: 1px solid #00bb9e; border-radius: 10rpx; overflow: hidden;}
+.room_info {padding: 30rpx;}
+.room_info .list{width: 49%; margin-top: 20rpx;}
+.room_info .list:nth-child(even){margin-left: 2%;}
+.room_info .icon{ width: 28rpx; height: 28rpx; margin-right: 15rpx;}
+.room_details{ padding:0 30rpx;}
+.room_details .list-box{padding: 30rpx 0; border-top: 1px solid #eee;}
+.room_details .text{line-height: 1.6;}
+.back_time{padding: 20rpx 30rpx; background:#e6cfa3;}
+.time .day{ border-radius: 6rpx; padding: 6rpx 14rpx;}
+.time .view{margin-top: 20rpx;}
+.time .box{ border: 1px solid #9c653e; border-radius: 24rpx;}
+.time .link{ padding:30rpx 0;}
+.add_room{ padding: 0 30rpx; }
+.add_room>view{ border-top: 1px dashed #e4e4e4; padding: 24rpx 0;}
+
+.acount{height: auto;line-height: 2.5em;}
+.acount text,.acount button{font-size: inherit;margin-left: 20rpx; width: 2.5em;height: 2.5em;min-height: 2.5em; line-height: 2.5;box-sizing: border-box;
+text-align: center;border-radius: 50%;border: 1px solid #e4e4e4;padding: 0;font-weight: normal;}
+.acount .on{background-color: #9c653e;color: #fff;border-color: #9c653e;}
+
+.list-price view view{width: 50%;}
+.new_detail .box{padding: 30rpx;}
+.time{border-bottom: 1px dashed #f5f5f5;padding-bottom: 20rpx;}

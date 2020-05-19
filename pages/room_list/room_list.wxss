@@ -1,0 +1,54 @@
+/* pages/room_list/room_list.wxss */
+@import "../../utils/wxParse/wxParse.wxss";
+page{background: #f3ffff;}
+.time .day{ border-radius: 6rpx; padding: 6rpx 14rpx;}
+.time .view{margin-top: 20rpx;}
+.time .box{ border: 1px solid #00bb9e; border-radius: 10rpx;}
+.time .link{ padding:30rpx 0;}
+.room-list .img{  height: 400rpx; border-radius: 10rpx 10rpx 0 0; overflow: hidden; }
+.room-list .img view{height: 100%;width: 100%;}
+.room-list .img-box .text{ width: 100%; box-sizing: border-box; }
+.room-list .list,.spring_list .box-list{ border: 1px solid #00bb9e; border-radius: 10rpx; }
+.room-list .list+.list{margin-top: 20rpx;}
+.room-list .img-box .desc>view{ width: 50%; margin: 5rpx 0;}
+.room-list .img-box .desc{padding-right: 100rpx;padding: 0 0 27rpx 27rpx;}
+.room_btn{ width: 116rpx; border: 4rpx solid #00bb9e; border-radius: 8rpx;padding: 3rpx; overflow: hidden; margin-left: auto;}
+.room-btn{margin-left: 100rpx;}
+.room_btn.disable{border-color: #707070;}
+.room_btn text{border-radius: 4rpx;background: #00bb9e; width: 100%; height: 46rpx; line-height: 46rpx;}
+.room_btn .T{ background: #e5cd9f;}
+.quick_buy{ color: #fff;border-color: #ff945e;}
+.quick_buy text{background-color: #ff945e;}
+.room_btn .on{ opacity: 0.7;}
+.room_btn .T::before{ content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(http://www.fenglu-alu.com/images/xcx/btn_bg.png) repeat center; background-size: 41rpx 24rpx; opacity: 0.54;}
+.room-list .other .title{line-height: 1.5;}
+.room-list .other .a{ padding: 0 30rpx; }
+.room-list .other .box{ padding: 20rpx 0;border-top: 1px solid #e4e4e4;}
+.add_room{ padding: 0 30rpx; }
+.add_room>view{ border-top: 1px dashed #e4e4e4; padding: 24rpx 0;}
+.label_list{padding-left: 27rpx; padding-right: 27rpx;}
+.room_money{padding-right: 27rpx;}
+.room_name{padding: 23rpx 27rpx; background: url(http://www.fenglu-alu.com/images/lsimg/tbg.png) right center #00bb9e no-repeat;width: 340rpx; border-bottom-right-radius: 31rpx;overflow: hidden;
+background-size: auto 40%;}
+
+.c_sale{border-radius: 6rpx; background: #ffa75a;width: 71rpx;height: 32rpx;line-height: 32rpx;text-align: center;float: left;transform: translateY(5rpx);
+margin-right: 12rpx;}
+
+.add_room{ padding: 0 30rpx; }
+.add_room>view{ border-top: 1px dashed #e4e4e4; padding: 24rpx 0;}
+.label_list{padding-left: 30rpx; padding-right: 30rpx;}
+
+.acount{height: auto;line-height: 2.5em;}
+.acount text,.acount button{font-size: inherit;margin-left: 20rpx; width: 2.5em;height: 2.5em;min-height: 2.5em; line-height: 2.5;box-sizing: border-box;
+text-align: center;border-radius: 50%;border: 1px solid #e4e4e4;padding: 0;font-weight: normal;}
+.acount .on{background-color: #00bb9e;color: #fff;border-color: #00bb9e;}
+.room_money:before,.room_money:after{display: none;}
+.add_room text{ line-height: 2.5em;}
+
+.spring-con{border: 2rpx solid #00bb9e; border-radius: 10rpx;padding: 30rpx;box-sizing:border-boxs;line-height: 1.8;}
+.spring-con .bg{border: 1rpx solid #00bb9e;background: url(http://www.fenglu-alu.com/images/lsimg/box_bg3.jpg);border-radius: 5rpx; background-size: 100% auto;}
+.spring-con .bgs{background: url(http://www.fenglu-alu.com/images/lsimg/bgs.png) no-repeat;background-size: 100% auto;background-position: 0 280rpx;padding: 38rpx;}
+.spring-con .title{background: url(http://www.fenglu-alu.com/images/lsimg/bgst.png) no-repeat;width: 100%;height: 112rpx;line-height: 112rpx;
+background-size: auto 100%;background-position: center;text-align: center;}
+.spring-con .title2{background: url(http://www.fenglu-alu.com/images/lsimg/bgst2.png) no-repeat;width: 100%;
+background-size: 100% auto;background-position: left bottom;text-align: center;padding-bottom: 9rpx;}

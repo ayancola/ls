@@ -1,0 +1,136 @@
+<import src="../../utils/wxParse/wxParse.wxml" />
+<view class='banner'>
+  <swiper autoplay='true' indicator-dots='true' indicator-color='rgba(24,167,107,0.5)' indicator-active-color='rgba(24,167,107,1)' duration='800'>
+    <block wx:for="{{room_info.img}}" wx:key="index">
+      <swiper-item>
+        <image src='{{item}}' mode='aspectFill' class='banner-img'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="flex flex0 flex_dj countdown_box">
+    <view class="price">
+        <text class="f-28 c-fff">抢购特惠: ￥</text>
+        <text class="f-44 bold c-fff ">{{room_info.show_money}}</text>
+        <text class="f-24 c-fff">￥</text>
+        <text class="del-money c-fff f-24 ">{{room_info.int_money}}</text>
+    </view>
+</view>
+<view class="room-detail pb_LR_40 tool_pd_B">
+  <view class="box b-fff">
+    <view class="title f-30 c-fff pos-r flex flex0 flex_dj">
+      <view class="txt bold tbg">{{room_info.name}}</view>
+      <button hover-class="none" open-type="share" class="share_btn pos-a Ycenter">
+        <image src="http://www.fenglu-alu.com/images/lsimg/share_btn.png" mode="{{w_100}}"></image>
+      </button>
+    </view>
+    <view class="room_info mt-30">
+      <view class='vertical f-26 c-666' bindtap='ellipsis' wx:if="{{room_info.sub_title!=''}}">
+          <view class="pay-hint-content {{ellipsis?'ellipsis':'unellipsis'}}">{{room_info.sub_title}}
+              <view class="img-ellipsis">
+                  <image src="http://www.fenglu-alu.com/images/xcx/d.png" mode="aspectFill"
+                         style="{{ellipsis ? '':'transform: rotate(180deg) translateY(2rpx);'}}"></image>
+              </view>
+          </view>
+      </view>
+      <view class="list-box flex flex-wrap">
+        <block  wx:for="{{room_info.room_params}}" wx:key="id" wx:for-index="param_index" wx:for-item="param_item">
+          <view class="flex flex-Y-center list">
+            <view class="icon flex0">
+              <image src="{{param_item.icon}}" mode="{{fit}}"></image>
+            </view>
+            <view class="text f-26 c-70 w-100">{{param_item.title}}：{{param_item.content}}</view>
+          </view>
+        </block>
+        <view class="time mt-30" wx:if="{{is_ready!=1}}">
+          <view class="box link flex_dj flex-Y-bottom f-26 c-70" hover-class="none">
+            <view class="prev-day">
+              <text class="block" wx:if="{{room_info.product_type==0}}">入住日期</text>
+              <text class="block" wx:if="{{room_info.product_type==1}}">抵扣数量</text>
+              <view class="view">使用有效期</view>
+            </view>
+            <view class="next-day text-right">
+              <text class="block" wx:if="{{room_info.product_type==0}}">{{room_info.day}}天</text>
+              <text class="block" wx:if="{{room_info.product_type==1}}">{{room_info.day}}件</text>
+              <view class="view">{{room_info.expire_start_time}}至{{room_info.expire_end_time}}</view>
+            </view>
+          </view>
+          <view class="add_room mt-20">
+            <view class=" flex flex_Y_Center">
+              <text class="w-100 f-26 c-2d">抢购数量：</text>
+              <view class="flex0 acount f-26">
+                  <picker bindchange="bindRoomNum" value="{{index}}" range="{{room_num}}">
+                      <text class="picker block on">{{rNum}}</text>
+                  </picker>
+                  <view class="block c-70 f-26 text-right">每个用户限购{{room_info.max_rush}}份,你还能购买{{room_info.max_stock}}份</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="price f-28 c-2d flex0 flex flex_dj mt-30">
+          <text>抢购价：</text>
+          <view>
+            <text class="f-28 c-e50e0c">￥</text>
+            <text class="f-38 c-e50e0c">{{room_info.show_money}}</text>
+          </view>
+        </view>
+        <view class="f-24 c-70 mt-50">
+          <view class="bold">使用说明：</view>
+          <view>
+            <text>{{room_info.remark}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+  <view  wx:if="{{room_info.product_type==0}}" class="box b-fff mt-20">
+    <view class="room_details">
+
+      <view class="list-box">
+        <view class="title f-30 c-00a67b bold">房间详情</view>
+
+        <!-- <view class="text f-24 c-70 mt-30">
+          <text class="bold">便利设施：</text>{{room_shebei.facilitate_text}}</view> -->
+        <view class="text f-24 c-70 mt-30">
+          <text class="bold block">酒店政策：</text>
+          <text>{{room_shebei.technology_text}}</text>
+        </view>
+        <view class="text f-24 c-70 mt-30">
+          <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </view>
+
+      </view>
+
+
+    </view>
+  </view>
+
+  <view  wx:if="{{room_info.product_type==1}}" class="box b-fff mt-20">
+    <view class="spring_details">
+      <view class="list-box">
+        <view class="title f-30 c-00a67b bold">购买须知</view>
+        <view class="text f-24 c-70 mt-10">
+          <text>{{room_shebei.facilitate_text}}</text>
+        </view>
+      </view>
+      <view class="list-box">
+        <view class="title f-30 c-00a67b bold">使用说明</view>
+        <view class="text f-24 c-70 mt-10">
+          <text>{{room_shebei.technology_text}}</text>
+        </view>
+      </view>
+      <view class="list-box">
+        <view class="title f-30 c-00a67b bold">其他说明</view>
+        <view class="text f-24 c-70 mt-10">
+          <text>{{room_shebei.other_text}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<include src="/pages/page_common/detail_bottom/detail_bottom2"></include>

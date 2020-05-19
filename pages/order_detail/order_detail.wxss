@@ -1,0 +1,23 @@
+/* pages/order_detail/order_detail.wxss */
+
+.all_box{padding: 30rpx 40rpx;}
+.all_box .T,.all_box .B{border:1px solid #00bb9e; border-radius: 10rpx; overflow: hidden;}
+.all_box .B,.all_box .T .info,.all_box .T .date-box{ padding: 30rpx;}
+.all_box .T .title{background: url(http://www.fenglu-alu.com/images/lsimg/tbg.png) right center #00bb9e no-repeat;background-size: auto 50%;padding: 25rpx 30rpx;}
+.all_box .list>view+view{ margin-top: 15rpx;}
+.all_box .T{background: url(http://www.fenglu-alu.com/images/lsimg/sbg04.png) #fff no-repeat;background-position: 474rpx 109rpx;background-size: 165rpx auto;}
+.all_box .T.stabg01{background-image: url(http://www.fenglu-alu.com/images/lsimg/sbg01.png);}
+.all_box .T.stabg02{background-image: url(http://www.fenglu-alu.com/images/lsimg/sbg02.png);}
+.all_box .T.stabg03{background-image: url(http://www.fenglu-alu.com/images/lsimg/sbg03.png);}
+.all_box .T.stabg04{background-image: url(http://www.fenglu-alu.com/images/lsimg/sbg04.png);border-color: #bbbbbb;}
+.all_box .T.stabg04 .title{background-color: #bbbbbb;background-image: url(http://www.fenglu-alu.com/images/lsimg/tbg2.png);}
+.all_box .T .date>view{ background: #e7ffff; line-height: 1; padding: 8px 15px; border-radius: 6rpx;}
+.all_box .T .btn-box>view,.all_box .T .btn-box>navigator,.all_box .T .btn-box>button{padding:0; width: 156rpx; margin: 0 14rpx 0 0; height: 52rpx; 
+    border: 1px solid #04a57a; border-radius: 8rpx; line-height: 52rpx; min-height: 0; box-sizing: content-box; font-weight: normal;}
+.all_box .T .tips image{ width: 30rpx; margin-right: 14rpx;}
+.all_box .T .tips{ margin-top: 30rpx; padding-top: 16rpx; border-top: 1px dashed #f2f1f1;}
+.company{ border-bottom: 1px solid #00bb9e; padding-bottom: 10rpx;}
+.all_box .B image{ width: 20rpx; margin-left: 10rpx;}
+.note{background: #f2f1f1;padding: 20rpx 33rpx;}
+
+.c_sale{border-radius: 6rpx; background: #ffa75a;width: 71rpx;height: 32rpx;line-height: 32rpx;text-align: center;float: left;transform: translateY(5rpx);margin-right: 10rpx;}

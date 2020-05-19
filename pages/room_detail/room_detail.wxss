@@ -1,0 +1,39 @@
+/* pages/room_detail/room_detail.wxss */
+@import "../../utils/wxParse/wxParse.wxss";
+page{background: #f3ffff;}
+.banner swiper{height: 500rpx;}
+.banner .wx-swiper-dots.wx-swiper-dots-horizontal{bottom: 30rpx;}
+.banner .wx-swiper-dot{ background: #18a76b; width: 14rpx;height: 14rpx; margin: 0 6rpx;}
+.room-detail{padding-top: 35rpx;}
+.room-detail .box{ border: 1px solid #00bb9e; border-radius: 10rpx; overflow: hidden;}
+.room_info {padding: 30rpx;}
+.room_info .list{width: 49%; margin-top: 20rpx;}
+.room_info .list:nth-child(even){margin-left: 2%;}
+.room_info .list-box>view:nth-last-of-type(1){width: 100% !important;margin-left: 0;}
+
+.room_info .icon{ width: 28rpx; height: 28rpx; margin-right: 15rpx;}
+.room_details{ padding:0 30rpx;}
+.room_details .list-box{padding: 30rpx 0; border-top: 1px solid #eee;}
+.room_details .text{line-height: 1.6;}
+.tbg{padding: 23rpx 87rpx 23rpx 27rpx; background: url(http://www.fenglu-alu.com/images/lsimg/tbg.png) right center #00bb9e no-repeat;width: 340rpx; border-bottom-right-radius: 31rpx;overflow: hidden;
+background-size: auto 40%;}
+
+.room-detail .time{width: 100%;}
+.room-detail .time .day{ border-radius: 6rpx; padding: 6rpx 14rpx;}
+.room-detail .time .view{margin-top: 20rpx;}
+.room-detail .time .box{ border: 1px solid #00bb9e; border-radius: 24rpx;}
+.room-detail .time .link{ padding:30rpx 25rpx;background: #f5ffff;}
+.title .tbg{position: relative; padding: 23rpx 27rpx;width: 525rpx;border-bottom-right-radius: 31rpx;overflow: hidden;background-color: #00bb9e;
+    background: url(http://www.fenglu-alu.com/images/lsimg/tbg.png) #00bb9e no-repeat;background-size: auto 40%;
+background-position: right center ;}
+
+.countdown_box{padding: 19rpx 49rpx;background: url(http://www.fenglu-alu.com/images/lsimg/bg_price.jpg) no-repeat;background-size: cover;}
+.countdown_box .time>view{border: 1px solid #a93900;background: #fff;border-radius: 5rpx;width: 40rpx;height: 40rpx;line-height: 40rpx;text-align: center;}
+
+.acount{height: auto;line-height: 2.5em;}
+.acount text,.acount button{font-size: inherit;margin-left: 20rpx; width: 2.5em;height: 2.5em;min-height: 2.5em; line-height: 2.5;box-sizing: border-box;
+text-align: center;border-radius: 50%;border: 1px solid #e4e4e4;padding: 0;font-weight: normal;}
+.acount .on{background-color: #00bb9e;color: #fff;border-color: #00bb9e;}
+.list-price{line-height: 1.8;padding: 20rpx 0;}
+.list-price view view{width: 50%;}
+.add_room text{ line-height: 2.5em;}

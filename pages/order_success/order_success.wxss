@@ -1,0 +1,6 @@
+/* pages/order_success/order_success.wxss */
+page{ background: url(http://www.fenglu-alu.com/images/lsimg/submit_bg.jpg) no-repeat top center #f3ffff; background-size: 100% auto;}
+.box{padding: 100rpx 130rpx;}
+.icon{ width: 339rpx;}
+.text{line-height: 1.6;}
+navigator{ border: 1px solid #04a57a; height: 72rpx; line-height: 72rpx; border-radius: 8rpx;overflow:hidden;}

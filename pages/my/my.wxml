@@ -1,0 +1,72 @@
+<!--pages/my/my.wxml-->
+<view class="all_box">
+  <view class="my_info">
+    <view class="flex flex-Y-center">
+      <view class="tx flex0">
+        <open-data type="userAvatarUrl" class="w-100 h-100 block"></open-data>
+      </view>
+      <view class="info w-100">
+        <open-data type="userNickName" class="name f-33 c-fff bold"></open-data>
+        <view class="jfen-box flex flex-Y-center mt-20"> 
+          <view class="jfen f-26 c-fff flex0">积分：{{points}}</view>
+          <view class="jfen_btn f-24 c-00a67b b-fff flex0" bindtap="_link" data-index="2">积分兑换</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="all_order b-fff mt-30">
+    <view class="title flex flex-Y-bottom">
+      <view class="title f-26 c-2d w-100">我的预订</view>
+      <navigator class="f-22 c-70 flex0" url="/pages/my_order/my_order?index=0" hover-class="none">全部订单</navigator>
+    </view>
+    <view class="link flex_dj f-26 c-218a52 mt-30">
+      <view class="text-center" hover-class="none" data-index="1" bindtap="i_order_link" >
+        <view class="icon m-ot">
+          <image src="http://www.fenglu-alu.com/images/lsimg/order_icon1.png" mode="{{fit}}"></image>
+        </view>
+        <text class="block mt-20">待支付</text>
+      </view>
+      <view class="text-center" hover-class="none" data-index="2" bindtap="i_order_link" >
+        <view class="icon m-ot">
+          <image src="http://www.fenglu-alu.com/images/lsimg/order_icon2.png" mode="{{fit}}"></image>
+        </view>
+        <text class="block mt-20">待确认</text>
+      </view>
+      <view class="text-center" hover-class="none" data-index="3" bindtap="i_order_link" >
+        <view class="icon m-ot">
+          <image src="http://www.fenglu-alu.com/images/lsimg/order_icon3.png" mode="{{fit}}"></image>
+        </view>
+        <text class="block mt-20">已预订</text>
+      </view>
+      <view class="text-center" hover-class="none" data-index="4" bindtap="i_order_link" >
+        <view class="icon m-ot">
+          <image src="http://www.fenglu-alu.com/images/lsimg/order_icon4.png" mode="{{fit}}"></image>
+        </view>
+        <text class="block mt-20">已取消</text>
+      </view>
+    </view>
+  </view>
+  <view class="my_list b-fff f-26 c-2d mt-30">
+    <navigator class="flex flex-Y-center list" hover-class="none" url="/pages/my_vouchers/my_vouchers">
+      <text class="w-100">我的抢购券</text><image src="http://www.fenglu-alu.com/images/xcx/right.png" class="flex0" mode="{{w_100}}"></image>
+    </navigator>
+    <navigator class="flex flex-Y-center list" hover-class="none" url="/pages/my_coupon/my_coupon">
+      <text class="w-100">我的优惠券</text><image src="http://www.fenglu-alu.com/images/xcx/right.png" class="flex0" mode="{{w_100}}"></image>
+    </navigator>
+    <navigator class="flex flex-Y-center list" hover-class="none" url="/pages/integral/integral">
+      <text class="w-100">积分账单</text><image src="http://www.fenglu-alu.com/images/xcx/right.png" class="flex0" mode="{{w_100}}"></image>
+    </navigator>
+<!--     <navigator class="flex flex-Y-center list" hover-class="none" url="/pages/invoice/invoice">
+  <text class="w-100">发票抬头</text><image src="http://www.fenglu-alu.com/images/xcx/right.png" class="flex0" mode="{{w_100}}"></image>
+</navigator>
+<navigator class="flex flex-Y-center list" hover-class="none" url="/pages/add_list/add_list">
+  <text class="w-100">地址管理</text><image src="http://www.fenglu-alu.com/images/xcx/right.png" class="flex0" mode="{{w_100}}"></image>
+</navigator> -->
+    <view class="flex flex-Y-center list" bindtap="choose_add">
+      <text class="w-100">地址管理</text><text>{{add_list.address}}</text><image src="http://www.fenglu-alu.com/images/xcx/right.png" class="flex0" mode="{{w_100}}" wx:if="{{add_list.address==''}}"></image>
+    </view>
+    <view class="flex flex-Y-center list" bindtap="choose_fp">
+      <text class="w-100">发票抬头</text><text class="flex0">{{fapiao.title}}</text><image src="http://www.fenglu-alu.com/images/xcx/right.png" class="flex0" mode="{{w_100}}" wx:if="{{fapiao.title==''}}"></image>
+    </view>
+  </view>
+</view>

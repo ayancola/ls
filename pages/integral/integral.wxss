@@ -1,0 +1,7 @@
+/* pages/integral/integral.wxss */
+.all-box{padding: 30rpx 40rpx;}
+.all-box .list{ border: 1px solid #00bb9e; border-radius: 10rpx; overflow: hidden;padding: 27rpx 29rpx;}
+.all-box .list+.list{margin-top: 20rpx;}
+
+.all-box .icon{ width: 188rpx;}
+.all-box .text{line-height: 1.6;}

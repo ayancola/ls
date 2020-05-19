@@ -1,0 +1,127 @@
+<import src="../../utils/wxParse/wxParse.wxml" />
+<view class='banner'>
+	<swiper autoplay='true' indicator-dots='true' indicator-color='rgba(24,167,107,0.5)' indicator-active-color='rgba(24,167,107,1)' duration='800'>
+		<block wx:for="{{banner_img}}" wx:key="index">
+			<swiper-item>
+				<image src='{{item}}' mode='aspectFill' class='banner-img'></image>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+<view class="flex flex0 flex_dj countdown_box {{is_integral==0 ? 'bg':''}}" >
+<!-- 	<view class="price">
+	<text class="f-28 c-fff">￥</text>
+	<text class="f-44 c-fff bold">{{money.show_money}} </text>
+	<text class="f-24 c-fff">￥</text>
+	<text class="del-money c-fff f-24 ">{{money.int_money}}</text>
+</view>
+<view class="time flex0 flex flex-Y-center f-28">
+	<text class="c-6b4931" style="margin-right:20rpx;" wx:if="{{day>0}}">{{day}}天</text>
+	<view class="h c-e50e0c b-fff">{{hou}}</view>
+	<text class="c-6b4931">:</text>
+	<view class="m c-e50e0c b-fff">{{min}}</view>
+	<text class="c-6b4931">:</text>
+	<view class="s c-e50e0c b-fff">{{sec}}</view>
+</view> -->
+	<block wx:if="{{is_integral==0}}">
+		<view class="price f-24 c-2d flex0 flex ">
+			<view>
+				<text class="f-24 c-fff">{{is_rush==0?"商城特惠":"抢购特惠"}}: ￥</text>
+				<text class="f-44 c-fff bold">{{money.show_money}} </text>
+				<text class="f-24 c-fff">￥</text>
+				<text class="del-money c-fff">{{money.int_money}}</text>
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="price f-28 c-fff flex0 flex flex-Y-bottom ">
+			<text class="f-38 c-fff">{{money.show_money}}</text>
+			<text class="del-money c-fff"> ￥{{money.int_money}}</text>
+		</view>
+	</block>
+</view>
+<view class="room-detail pb_LR_40 tool_pd_B">
+	<view class="box b-fff">
+		<view class="title f-30 c-fff pos-r flex flex0 flex_dj">
+			<view class="txt bold tbg">{{title}} </view>
+			<button hover-class="none" open-type="share" class="share_btn pos-a Ycenter">
+				<image src="http://www.fenglu-alu.com/images/lsimg/share_btn.png" mode="{{w_100}}"></image>
+			</button>
+		</view>
+		<view class="room_info pos-r">
+			
+			<view class="choose_time flex b-f5ffff mt-30">
+				<view class="date-box today flex0 {{active_index==0?'on':''}}" data-time="{{time.today1}}" data-index="0" bindtap="change">
+					<view class="date pos-r">
+						<view class="text-center w-100 pos-a Ycenter">
+							<text class="block f-24 c-70">今天</text>
+							<text class="block f-26 c-00a67b mt-10">{{time.today}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="date-box today flex0 {{active_index==1?'on':''}}" data-time="{{time.tomorrow1}}" data-index="1" bindtap="change">
+					<view class="date pos-r">
+						<view class="text-center w-100 pos-a Ycenter">
+							<text class="block f-24 c-70">明天</text>
+							<text class="block f-26 c-00a67b mt-10">{{time.tomorrow}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="date-box today flex0 {{active_index==2?'on':''}}" data-time="{{time.after_tomorrow1}}" data-index="2" bindtap="change">
+					<view class="date pos-r">
+						<view class="text-center w-100 pos-a Ycenter">
+							<text class="block f-24 c-70">后天</text>
+							<text class="block f-26 c-00a67b mt-10">{{time.after_tomorrow}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="date-box today flex0 pos-r {{active_index==3?'on':''}}">
+					<picker mode="date" value="{{time.after_after_tomorrow}}" start="{{time.after_after_tomorrow}}" end="{{time.end_day}}" bindchange="bindDateChange" class="pos-a w-100 h-100" data-index="3">
+						<view class="picker pos-a w-100 h-100">
+							当前选择: {{time.after_after_tomorrow}}
+						</view>
+					</picker>
+					<view class="date pos-r">
+						<view class="text-center w-100 pos-a Ycenter">
+							<text class="block f-24 c-70">指定日期</text>
+							<text class="block f-22 c-00a67b {{time.other_day!=''?'mt-10':''}}">{{time.other_day}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="add_room mt-30">
+				<view class=" flex flex-Y-center">
+					<text class="w-100 f-26 c-2d">预订数量：</text>
+					<view class="flex0 flex acount f-26">
+	                  <picker bindchange="bindRoomNum" value="{{index}}" range="{{room_num}}">
+	                      <text class="picker block on">{{rNum}}</text>
+	                  </picker>
+	              </view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="box b-fff mt-20">
+		<view class="spring_details">
+			<view class="list-box">
+				<view class="title f-30 c-00a67b bold">购买须知</view>
+				<view class="text f-24 c-70 mt-10">
+					<text>{{room_info.facilitate_text}}</text>
+				</view>
+			</view>
+			<view class="list-box">
+				<view class="title f-30 c-00a67b bold">使用说明</view>
+				<view class="text f-24 c-70 mt-10">
+					<text>{{room_info.technology_text}}</text>
+				</view>
+			</view>
+			<view class="list-box">
+				<view class="title f-30 c-00a67b bold">其他说明</view>
+				<view class="text f-24 c-70 mt-10">
+					<text>{{room_info.other_text}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<include src="/pages/page_common/detail_bottom/detail_bottom"></include>

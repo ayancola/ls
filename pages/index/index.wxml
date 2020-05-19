@@ -1,0 +1,174 @@
+<!--index.wxml-->
+<view class='banner'>
+    <swiper autoplay='true' indicator-dots='true' indicator-color='rgba(24,167,107,0.3)' indicator-active-color='rgba(24,167,107,1)'
+            duration='800'>
+        <block wx:for="{{banner_img}}" wx:key="index">
+            <swiper-item>
+                <block wx:if="{{item.is_link}}">
+                    <navigator hover-class="none" url="{{item.wx_linkurl}}" open-type="{{item.link_type}}">
+                        <image src='{{item.images}}' mode='aspecFill' class='banner-img'></image>
+                    </navigator>
+                </block>
+                <block else>
+                    <image src='{{item.images}}' mode='aspecFill' class='banner-img'></image>
+                </block>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="nav pb_LR_40 mt-50">
+    <view class="box flex_dj">
+        <block wx:for="{{nav}}" wx:key="index">
+            <view hover-class="none" url="{{item.link}}" bindtap="_link" data-index="{{index}}">
+                <view class="icon m-ot">
+                    <image src="{{item.icon}}" mode="{{fit}}"></image>
+                </view>
+                <text class="f-28 c-00bb9e block text-center mt-20">{{item.text}}</text>
+            </view>
+        </block>
+    </view>
+</view>
+<view class="title aboutbg mt-60">
+    <image src="http://www.fenglu-alu.com/images/lsimg/aboutt223.png" mode="{{w_100}}"></image>
+    <text class="f-28 c-666 block text-center">青山揽翠 古寺藏幽 依山傍水 风景宜人</text>
+</view>
+<view class="about pb_LR_40">
+    <!-- <view class="title m-ot">
+        <image src="http://www.fenglu-alu.com/images/lsimg/aboutt22.png" mode="{{w_100}}"></image>
+    </view> -->
+    <!-- <text class="f-38 text-center block mt-40 c-00a67b">洗涤浮尘  回归自然</text> -->
+    
+    <!-- <text class="f-28 text-center block c-666 "></text> -->
+    <text class="f-24 text-center block mt-20 c-666">集天然温泉、养生SPA、高级会所、豪华别墅、
+娱乐休闲、商务会议等为一体的高端精品温泉酒店。
+    </text>
+    <!-- <image src="http://www.fenglu-alu.com/images/lsimg/img1_22.png" mode="{{w_100}}" class="mt-60"></image> -->
+    <view class="springimg mt-60">  
+        <swiper  interval='2500' autoplay='true' indicator-dots='false' circular="true" indicator-color=' rgba(24,167,107,0)' indicator-active-color='rgba(24,167,107,0)' display-multiple-items="3">
+            <block wx:for="{{slist2}}" wx:key="index">
+                <swiper-item>
+                    <image src='{{item.images}}' mode='aspectFill' class='banner-img' catchtap='previewImg2' data-imgurl="{{item.images}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</view>
+<view class="room mt-40">
+    <view class="title ">
+        <image src="http://www.fenglu-alu.com/images/lsimg/tt1_3.png" mode="{{w_100}}"></image>
+        <text class="f-28 c-666 block text-center">提供全套管家式服务</text>
+    </view>
+    <swiper autoplay='true' duration='500' interval="4000" indicator-dots='true' indicator-color='rgba(24,167,107,0.3)'
+            indicator-active-color='rgba(24,167,107,1)' class="mt-30">
+        <block wx:for="{{room}}" wx:key="index">
+            <swiper-item>
+                <view hover-class="none" class="pb_LR_40" open-type="navigate">
+                    <view class="box b-fff">
+                        <view class="img"  bindtap="link_to_room"  data-url="{{item.url}}">
+                            <image src='{{item.img}}' mode='aspectFill'></image>
+                        </view>
+                        <view class="text">
+                            <view class="flex flex-Y-center flex_dj"  bindtap="link_to_room"  data-url="{{item.url}}">
+                                <view class="name">
+                                    <text class="f-32 c-fff bold w-100">{{item.name}}</text>
+                                </view>
+                                <view class="room_money pos-r f-44 c-ff945e text-right">
+                                    <text class="f-24 block c-999 del-money">￥{{item.price}}</text>
+                                    <text class="f-24">￥</text>
+                                    <text class="f-36">{{item.money}}</text>
+                                    <text class="f-24">起</text>
+                                </view>
+                            </view>
+                            <view class="desc f-22 c-48 mt-20 flex flex-wrap"  bindtap="link_to_room"  data-url="{{item.url}}">
+                                <block  wx:for="{{item.room_params}}" wx:key="room_id" wx:for-index="room_index" wx:for-item="room_item">
+                                    <text>{{room_item.title}}：{{room_item.content}}</text>
+                                </block>
+                            </view>
+                            <view class="label_list mt-30">
+                                <view class="flex flex-wrap">
+                                    <text class="f-20 c-00a67b b-e7ffff" catchtap="choose_fp">预约发票</text>
+              <text class="f-20 c-00a67b b-e7ffff" catchtap="link_to_point">积分累计</text>
+              <text class="f-20 c-00a67b b-e7ffff" catchtap="link_to_coupon">可用券</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </block>
+        <block wx:for="{{HotVilla}}" wx:key="index">
+            <swiper-item>
+                <view hover-class="none" data-url="{{item.url}}" class="pb_LR_40" open-type="navigate">
+                    <view class="box b-fff">
+                        <view class="img"  bindtap="link_to_room"  data-url="{{item.url}}">
+                            <image src='{{item.img}}' mode='aspectFill'></image>
+                        </view>
+                        <view class="text">
+                            <view class="flex flex-Y-center flex_dj"  bindtap="link_to_room"  data-url="{{item.url}}">
+                                <view class="name">
+                                    <text class="f-32 c-fff bold w-100">{{item.name}}</text>
+                                </view>
+                                <view class="room_money pos-r f-44 c-ff945e text-right">
+                                    <text class="f-24 block c-999 del-money">￥{{item.price}}</text>
+                                    <text class="f-24">￥</text>
+                                    <text class="f-36">{{item.money}}</text>
+                                    <text class="f-24">起</text>
+                                </view>
+                            </view>
+                            <view class="desc f-22 c-48 mt-20 flex flex-wrap"  bindtap="link_to_room"  data-url="{{item.url}}">
+                                <block  wx:for="{{item.room_params}}" wx:key="room_id" wx:for-index="room_index" wx:for-item="room_item">
+                                    <text>{{room_item.title}}：{{room_item.content}}</text>
+                                </block>
+                            </view>
+                            <view class="label_list mt-30">
+                                <view class="flex flex-wrap">
+                                    <text class="f-20 c-00a67b b-e7ffff" catchtap="choose_fp">预约发票</text>
+              <text class="f-20 c-00a67b b-e7ffff" catchtap="link_to_point">积分累计</text>
+              <text class="f-20 c-00a67b b-e7ffff" catchtap="link_to_coupon">可用券</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<view class="i-shop mt-20">
+    <view class="title">
+        <image src="http://www.fenglu-alu.com/images/lsimg/tt2_2.png" mode="{{w_100}}"></image>
+        <text class="f-28 c-666 block text-center">寻觅深山里的100%硫磺真温泉 </text>
+    </view>
+    <view class="pb_LR_40 mt-40 ">
+        <!-- <image src="http://www.fenglu-alu.com/images/lsimg/img1_1.png" mode="{{w_100}}" class="mt-60"></image> -->
+        <view class="springimg">
+            <!--  -->    
+            <swiper  interval='2500' autoplay='true' indicator-dots='false' circular="true" indicator-color=' rgba(24,167,107,0)' indicator-active-color='rgba(24,167,107,0)' display-multiple-items="3">
+                <block wx:for="{{slist}}" wx:key="index">
+                    <swiper-item>
+                        <image src='{{item.images}}' mode='aspectFill' class='banner-img' catchtap='previewImg' data-imgurl="{{item.images}}"></image>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+    </view>
+    <view hover-class="none" class="c-fff b-00cfaf wqbtn mt-30" bindtap="i_shop_link" data-index='2'>
+        <text class="block f-26">温泉预订</text>
+    </view>
+    <view class="title mt-30">
+        <image src="http://www.fenglu-alu.com/images/lsimg/tt5_2.png" mode="{{w_100}}"></image>
+    </view>
+    <view class="box pb_LR_40 mt-10">
+        <block wx:for="{{shop_list}}" wx:key="index">
+            <view hover-class="none" url="{{item.link}}" class="list flex flex_dj" data-index="{{index}}" bindtap="i_shop_link" style="background-image: url({{item.img}});">
+                <view>
+                    <text class="block f-28 c-d29e14">{{item.txt}}</text>
+                    <text class="block f-24 c-81 mt-10">{{item.txt2}}</text>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+<image src="{{slist3.images}}" mode="{{w_100}}" class="img3 mt-120"></image>
+<include src="/pages/page_common/contact/contact"></include>
