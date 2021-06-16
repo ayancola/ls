@@ -298,6 +298,13 @@
 					"pathName": "pages/order/order",
 					"query": "type=room&is_integral=0&rush_id=0&id=26",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order_success/order_success",
+					"pathName": "pages/order_success/order_success",
+					"query": "pay_type=1",
+					"scene": null
 				}
 			]
 		}

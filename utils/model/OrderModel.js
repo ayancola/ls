@@ -4,7 +4,16 @@ class OrderModel extends BaseModel {
     constructor() {
         super();
     }
+    notifyOrderToPay(order_id,type,callBack){
+        this.Wxrequest.request({
+            url: "store.server.php?m=notifyOrderToPay",
+            data: [order_id,type]
+        }).then((res) => {
+            typeof callBack == "function" ? callBack(res.data) : "";
+        }).catch(error => {
 
+        });
+    }
     confirmRoomOrder($product_id, $rush_id, $is_integral, $checkIn, $checkOut, $num, coupon_id, callBack) {
         this.Wxrequest.request({
             url: "store.server.php?m=confirmRoomOrder",

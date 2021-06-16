@@ -594,8 +594,11 @@ Page({
     payBefore: function () {
         if (this.data.product_type == 'room') {
             orderModel.PayRoomOrder(this.data.product_id, this.data.rush_id, this.data.is_integral, this.data.checkInDate, this.data.checkOutDate, this.data.bookNum, this.data.coupon_id, this.data.order_list, (data) => {
+                var pay_type = data.pay_type;
                 if (data.my_status == 0) {
                     var jsConfig = data.jsConfig;
+                    var order_id = data.order_id;
+
                     wx.requestPayment({
                         timeStamp: jsConfig.timeStamp,
                         nonceStr: jsConfig.nonceStr,
@@ -603,9 +606,11 @@ Page({
                         signType: jsConfig.signType,
                         paySign: jsConfig.paySign,
                         success: function (res2) {
-                            orderModel.us.wxroute("/pages/order_success/order_success", 2);
+                            orderModel.us.wxroute("/pages/order_success/order_success?pay_type="+pay_type, 2);
                         },
                         fail: function (res) {
+                            orderModel.notifyOrderToPay(order_id,1,function(){
+                            });
                             wx.showToast({
                                 title: '支付不成功',
                                 icon: 'none',
@@ -616,6 +621,7 @@ Page({
                                     }, 1500)
                                 }
                             });
+
                         },
                         complete: function (res) {
                             if (res.errMsg == 'requestPayment:cancel') {
@@ -634,17 +640,19 @@ Page({
                         },
                     });
                 } else if (data.my_status == 1) {
-                    orderModel.us.wxroute("/pages/order_success/order_success", 2);
+                    orderModel.us.wxroute("/pages/order_success/order_success?pay_type="+pay_type, 2);
                 } else {
-                    orderModel.us.wxroute("/pages/order_success/order_success", 2);
+                    orderModel.us.wxroute("/pages/order_success/order_success?pay_type="+pay_type, 2);
                 }
             }, () => {
                 this.data.is_paying = false;
             });
         } else {
             orderModel.PayShopOrder(this.data.product_id, this.data.rush_id, this.data.is_integral, this.data.shopDate, this.data.shopNum, this.data.coupon_id, this.data.order_list, (data) => {
+                var pay_type = data.pay_type;
                 if (data.my_status == 0) {
                     var jsConfig = data.jsConfig;
+                    var order_id = data.order_id;
                     wx.requestPayment({
                         timeStamp: jsConfig.timeStamp,
                         nonceStr: jsConfig.nonceStr,
@@ -652,9 +660,11 @@ Page({
                         signType: jsConfig.signType,
                         paySign: jsConfig.paySign,
                         success: function (res2) {
-                            orderModel.us.wxroute("/pages/order_success/order_success", 2);
+                            orderModel.us.wxroute("/pages/order_success/order_success?pay_type="+pay_type, 2);
                         },
                         fail: function (res) {
+                            orderModel.notifyOrderToPay(order_id,2,function(){
+                            });
                             wx.showToast({
                                 title: '取消支付',
                                 icon: 'none',
@@ -666,6 +676,7 @@ Page({
                         },
                         complete: function (res) {
                             if (res.errMsg == 'requestPayment:cancel') {
+
                                 wx.showToast({
                                     title: '取消支付',
                                     icon: 'none',
@@ -680,9 +691,10 @@ Page({
 
 
                 } else if (data.my_status == 1) {
-                    orderModel.us.wxroute("/pages/order_success/order_success", 2);
+
+                    orderModel.us.wxroute("/pages/order_success/order_success?pay_type="+pay_type, 2);
                 } else {
-                    orderModel.us.wxroute("/pages/order_success/order_success", 2);
+                    orderModel.us.wxroute("/pages/order_success/order_success?pay_type="+pay_type, 2);
                 }
             }, () => {
                 this.data.is_paying = false;
@@ -696,9 +708,9 @@ Page({
         this.data.order_list.name = this.data.order_name;
         var that = this;
         wx.requestSubscribeMessage({
-            tmplIds: ['ffExpG2tnboe__CFLIvqowj4RsARkeQ0vOZGWKD-N2w','yhTy9OZGEpTq-98k2eV9GAAIt2R5mt1S1fn8KoDxxGM','UThW01My-m_oMw_ruNr3Uc5HezzTZgIw4j_H-xtUkQk'],
+            tmplIds: ['ffExpG2tnboe__CFLIvqowj4RsARkeQ0vOZGWKD-N2w','UThW01My-m_oMw_ruNr3Uc5HezzTZgIw4j_H-xtUkQk','LjpN2Cle3nzc1Jd_UcrjRvMq6QK6a9XWpxJ9TUgdKhw'],
             success(res) {
-                if (res['ffExpG2tnboe__CFLIvqowj4RsARkeQ0vOZGWKD'] == "accept"||res['yhTy9OZGEpTq-98k2eV9GAAIt2R5mt1S1fn8KoDxxGM'] == "accept"||res['UThW01My-m_oMw_ruNr3Uc5HezzTZgIw4j_H-xtUkQk'] == "accept") {
+                if (res['ffExpG2tnboe__CFLIvqowj4RsARkeQ0vOZGWKD'] == "accept"||res['UThW01My-m_oMw_ruNr3Uc5HezzTZgIw4j_H-xtUkQk'] == "accept"||res['LjpN2Cle3nzc1Jd_UcrjRvMq6QK6a9XWpxJ9TUgdKhw'] == "accept") {
                     that.data.order_list.order_remind = 1;
                 } else {
                     that.data.order_list.order_remind = 0;

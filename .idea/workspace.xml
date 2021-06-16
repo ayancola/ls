@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da8b0aa2-7350-4afc-bfa2-5a2e3c9057e5" name="Default Changelist" comment="" />
+    <list default="true" id="da8b0aa2-7350-4afc-bfa2-5a2e3c9057e5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pages/order/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/order_success/order_success.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order_success/order_success.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/model/OrderModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/model/OrderModel.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,29 +153,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="order.wxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/order/order.wxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="108" column="42" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="order.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/order/order.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="706" column="23" lean-forward="true" selection-start-line="706" selection-start-column="23" selection-end-line="706" selection-end-column="23" />
+            <state relative-caret-position="321">
+              <caret line="651" column="45" selection-start-line="651" selection-start-column="16" selection-end-line="651" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="asu.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../asu.sql">
+      <file leaf-file-name="order_success.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/order_success/order_success.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            <state relative-caret-position="858">
+              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="underscore.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/underscore/underscore.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="651" column="19" lean-forward="true" selection-start-line="651" selection-start-column="19" selection-end-line="651" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/model/OrderModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order_success.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/order_success/order_success.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="6" column="40" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -180,11 +202,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>paySuccess2</find>
-      <find>orderModel</find>
-      <find>other_text</find>
-      <find>my_status</find>
-      <find>使用</find>
       <find>vouc</find>
       <find>抵用券</find>
       <find>促销价</find>
@@ -210,6 +227,11 @@
       <find>coupon_list</find>
       <find>check_index2</find>
       <find>hElx-ebre-wmbNbaUUdd226lOWS5rBFl9vyRafEHTCc</find>
+      <find>orderS</find>
+      <find>order</find>
+      <find>order_success</find>
+      <find>pay_type</find>
+      <find>var pay_type = data.pay_type;</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\admin\Desktop\ls</dir>
@@ -219,6 +241,9 @@
       <dir>C:\Users\admin\Desktop\小程序文件\ls\images</dir>
       <dir>C:\Users\admin\Desktop\小程序文件\ls\pages</dir>
     </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -235,7 +260,6 @@
         <option value="$PROJECT_DIR$/pages/my_order/my_order.js" />
         <option value="$PROJECT_DIR$/pages/news_detail/news_detail.js" />
         <option value="$PROJECT_DIR$/pages/order_detail/order_detail.js" />
-        <option value="$PROJECT_DIR$/pages/order_success/order_success.js" />
         <option value="$PROJECT_DIR$/pages/room_detail/room_detail.js" />
         <option value="$PROJECT_DIR$/pages/room_integral_detail/room_integral_detail.js" />
         <option value="$PROJECT_DIR$/pages/shop/shop.js" />
@@ -248,7 +272,6 @@
         <option value="$PROJECT_DIR$/pages/page_common/detail_bottom/detail_bottom2.wxml" />
         <option value="$PROJECT_DIR$/pages/room_sale_detail/room_sale_detail.js" />
         <option value="$PROJECT_DIR$/utils/model/RoomModel.js" />
-        <option value="$PROJECT_DIR$/utils/model/OrderModel.js" />
         <option value="$PROJECT_DIR$/pages/order_sale/order_sale.js" />
         <option value="$PROJECT_DIR$/pages/spring_detail/spring_detail.js" />
         <option value="$PROJECT_DIR$/pages/room_sale_detail/room_sale_detail.wxml" />
@@ -272,8 +295,10 @@
         <option value="$PROJECT_DIR$/pages/room_list/room_list.js" />
         <option value="$PROJECT_DIR$/pages/room_list/room_list.wxss" />
         <option value="W:/alu-expo.cn_v8/htdocs/common/server.php" />
-        <option value="$PROJECT_DIR$/pages/order/order.js" />
         <option value="$PROJECT_DIR$/../../asu.sql" />
+        <option value="$PROJECT_DIR$/utils/model/OrderModel.js" />
+        <option value="$PROJECT_DIR$/pages/order_success/order_success.js" />
+        <option value="$PROJECT_DIR$/pages/order/order.js" />
       </list>
     </option>
   </component>
@@ -288,6 +313,7 @@
     <option name="width" value="1932" />
     <option name="height" value="1092" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -304,6 +330,12 @@
               <item name="ls" type="b2602c69:ProjectViewProjectNode" />
               <item name="ls" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ls" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order_success" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -363,12 +395,12 @@
       <workItem from="1585562486693" duration="480000" />
       <workItem from="1585621964310" duration="652000" />
       <workItem from="1587613487843" duration="10278000" />
-      <workItem from="1589850060645" duration="5223000" />
+      <workItem from="1589850060645" duration="16104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171876000" />
+    <option name="totallyTimeSpent" value="182757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -380,7 +412,7 @@
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" />
@@ -402,28 +434,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils/model/RoomModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/新建文件夹/model/OrderModel.php" />
-    <entry file="file://$PROJECT_DIR$/pages/spring_detail/spring_detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/model/OrderModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="85" column="34" lean-forward="true" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/order_sale/order_sale.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -578,24 +588,52 @@
         <state relative-caret-position="-819" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/order/order.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="818">
+          <caret line="108" column="42" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../asu.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="234">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/order_success/order_success.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/model/OrderModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/underscore/underscore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="651" column="19" lean-forward="true" selection-start-line="651" selection-start-column="19" selection-end-line="651" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/order_success/order_success.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/order/order.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="706" column="23" lean-forward="true" selection-start-line="706" selection-start-column="23" selection-end-line="706" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/order/order.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="108" column="42" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
+        <state relative-caret-position="321">
+          <caret line="651" column="45" selection-start-line="651" selection-start-column="16" selection-end-line="651" selection-end-column="45" />
         </state>
       </provider>
     </entry>
