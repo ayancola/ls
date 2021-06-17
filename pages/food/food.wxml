@@ -1,4 +1,4 @@
-    <text class="f-28 c-666 block text-center">测试文本</text>
+    <text class="f-28 c-666 block text-center">修改测试文本</text>
 <import src="../../utils/wxParse/wxParse.wxml" />
 <view class="room-detail new_detail pb_LR_40 tool_pd_B">
     <view class="box b-fff">
