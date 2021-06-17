@@ -2,203 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da8b0aa2-7350-4afc-bfa2-5a2e3c9057e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/order/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/order_success/order_success.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order_success/order_success.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/model/OrderModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/model/OrderModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="897365538">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="js" value="30" />
-          <entry key="json" value="2" />
-          <entry key="php" value="7" />
-          <entry key="sql" value="1" />
-          <entry key="wxml" value="40" />
-          <entry key="wxss" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="40" />
-          <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="30" />
-          <entry key="PHP" value="7" />
-          <entry key="SQL" value="1" />
-          <entry key="Wxss" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="js" value="725" />
-          <entry key="php" value="147" />
-          <entry key="sql" value="16" />
-          <entry key="wxml" value="418" />
-          <entry key="wxss" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="418" />
-          <entry key="JavaScript" value="725" />
-          <entry key="PHP" value="147" />
-          <entry key="SQL" value="16" />
-          <entry key="Wxss" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1864079976">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="js" value="54" />
-          <entry key="php" value="15" />
-          <entry key="png" value="8" />
-          <entry key="sql" value="3" />
-          <entry key="wxml" value="36" />
-          <entry key="wxss" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="36" />
-          <entry key="Image" value="8" />
-          <entry key="JavaScript" value="54" />
-          <entry key="PHP" value="15" />
-          <entry key="SQL" value="3" />
-          <entry key="Wxss" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="js" value="2311" />
-          <entry key="php" value="245" />
-          <entry key="sql" value="6" />
-          <entry key="wxml" value="605" />
-          <entry key="wxss" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="605" />
-          <entry key="JavaScript" value="2311" />
-          <entry key="PHP" value="245" />
-          <entry key="SQL" value="6" />
-          <entry key="Wxss" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1792788209">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="js" value="29" />
-          <entry key="php" value="27" />
-          <entry key="wxml" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JavaScript" value="29" />
-          <entry key="PHP" value="27" />
-          <entry key="PLAIN_TEXT" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="js" value="599" />
-          <entry key="php" value="229" />
-          <entry key="wxml" value="122" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JavaScript" value="599" />
-          <entry key="PHP" value="229" />
-          <entry key="PLAIN_TEXT" value="122" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="order.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/order/order.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="651" column="45" selection-start-line="651" selection-start-column="16" selection-end-line="651" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order_success.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/order_success/order_success.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="underscore.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/underscore/underscore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="651" column="19" lean-forward="true" selection-start-line="651" selection-start-column="19" selection-end-line="651" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/model/OrderModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order_success.wxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/order_success/order_success.wxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="6" column="40" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -313,6 +123,7 @@
     <option name="width" value="1932" />
     <option name="height" value="1092" />
   </component>
+  <component name="ProjectId" id="1u3MHznpzkyqFIrY3mVxA7wdyqw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -344,29 +155,23 @@
       <pane id="Scope" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="T:/wxappsys.pbinfo.cn/htdocs/wxapp_other/lswqjd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Desktop\小程序文件\ls\pages\page_common\detail_bottom" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -396,6 +201,7 @@
       <workItem from="1585621964310" duration="652000" />
       <workItem from="1587613487843" duration="10278000" />
       <workItem from="1589850060645" duration="16104000" />
+      <workItem from="1623889757633" duration="137000" />
     </task>
     <servers />
   </component>
@@ -428,7 +234,18 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />

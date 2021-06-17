@@ -42,8 +42,7 @@
     <text class="f-24 text-center block mt-20 c-666">集天然温泉、养生SPA、高级会所、豪华别墅、
 娱乐休闲、商务会议等为一体的高端精品温泉酒店。
     </text>
-    <!-- <image src="http://www.fenglu-alu.com/images/lsimg/img1_22.png" mode="{{w_100}}" class="mt-60"></image> -->
-    <view class="springimg mt-60">  
+    <view class="springimg mt-60">
         <swiper  interval='2500' autoplay='true' indicator-dots='false' circular="true" indicator-color=' rgba(24,167,107,0)' indicator-active-color='rgba(24,167,107,0)' display-multiple-items="3">
             <block wx:for="{{slist2}}" wx:key="index">
                 <swiper-item>
