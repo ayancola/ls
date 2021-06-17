@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da8b0aa2-7350-4afc-bfa2-5a2e3c9057e5" name="Default Changelist" comment="">
+    <list default="true" id="da8b0aa2-7350-4afc-bfa2-5a2e3c9057e5" name="Default Changelist" comment="删除注释">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,8 +200,16 @@
       <workItem from="1585621964310" duration="652000" />
       <workItem from="1587613487843" duration="10278000" />
       <workItem from="1589850060645" duration="16104000" />
-      <workItem from="1623889757633" duration="137000" />
+      <workItem from="1623889757633" duration="1614000" />
     </task>
+    <task id="LOCAL-00001" summary="删除注释">
+      <created>1623889970440</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623889970441</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -249,6 +256,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="删除注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除注释" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pages/order_sale/order_sale.js">
