@@ -1,4 +1,3 @@
-    <text class="f-28 c-666 block text-center">添加测试文本</text>
 <!--index.wxml-->
 <view class='banner'>
     <swiper autoplay='true' indicator-dots='true' indicator-color='rgba(24,167,107,0.3)' indicator-active-color='rgba(24,167,107,1)'
